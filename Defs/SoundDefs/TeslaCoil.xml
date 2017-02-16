@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DefPackage-SoundDef>
+  <SoundDef>
+    <defName>TeslaCoil</defName>
+    <eventNames />
+           <maxVoices>4</maxVoices>
+           <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>TeslaCoilTurret/TeslaCoil</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>80</min>
+          <max>100</max>
+        </volumeRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</DefPackage-SoundDef>

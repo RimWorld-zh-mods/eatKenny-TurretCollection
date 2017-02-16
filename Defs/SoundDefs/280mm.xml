@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DefPackage-SoundDef>
+  <SoundDef>
+    <defName>280mm</defName>
+    <eventNames />
+           <maxVoices>4</maxVoices>
+           <maxSimultaneous>1</maxSimultaneous>
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Clip">
+            <clipPath>NavalGun/280mm_shot</clipPath>
+          </li>
+        </grains>
+        <volumeRange>
+          <min>150</min>
+          <max>175</max>
+        </volumeRange>
+        <pitchRange>
+          <min>0.98</min>
+          <max>1.02</max>
+        </pitchRange>
+      </li>
+    </subSounds>
+  </SoundDef>
+</DefPackage-SoundDef>

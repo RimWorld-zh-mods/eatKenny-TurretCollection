@@ -1,0 +1,574 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Resources>
+
+
+  <!-- =========== bases =========== -->
+
+  <ThingDef Name="ResourceBase" Abstract="True">
+    <thingClass>ThingWithComps</thingClass>
+    <label>unspecified resource</label>
+    <category>Item</category>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <stackLimit>75</stackLimit>
+    <comps>
+      <li>
+        <compClass>CompForbiddable</compClass>
+      </li>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+  </ThingDef>
+
+  <ThingDef Name="ResourceVerbBase" ParentName="ResourceBase" Abstract="True">
+    <equipmentType>Primary</equipmentType>
+    <techLevel>Neolithic</techLevel>
+    <comps>
+      <li>
+        <compClass>CompEquippable</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+
+<!--=============== TC ====================-->
+
+ 
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>SmartMine</defName>
+    
+<label>smart mine</label>
+    
+<description>A smart anti-personnel mine, launch itself to the enemy within a small radius and explode.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/SmartMine</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Standard_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>5</stackLimit>
+<statBases>
+
+    <WorkToMake>8000</WorkToMake>
+    <MarketValue>150</MarketValue>
+    
+    <MaxHitPoints>100</MaxHitPoints>
+    <Flammability>0</Flammability>
+    <DeteriorationRate>0</DeteriorationRate>
+    
+</statBases>
+    
+    <costList>
+      <Steel>12</Steel>
+      <Component>1</Component>
+    </costList>
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+ <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <wickTicks>
+          <min>10</min>
+          <max>30</max>
+        </wickTicks>
+      </li>
+</comps>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+</ThingDef>
+
+
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>M2_Crate</defName>
+    
+<label>M2 heavy machine gun</label>
+    
+<description>use this to build M2 machine gun turret.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/WeaponCrate</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Standard_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>1</stackLimit>
+<statBases>
+
+    <MarketValue>1800</MarketValue>
+    
+    <MaxHitPoints>300</MaxHitPoints>
+    <Flammability>0</Flammability>
+    <DeteriorationRate>0</DeteriorationRate>
+    
+</statBases>
+    
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>AMTurret_Crate</defName>
+    
+<label>.50 Cal anti-materiel gun</label>
+    
+<description>use this to build anti-materiel turret.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/WeaponCrate</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Standard_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>1</stackLimit>
+<statBases>
+
+    <MarketValue>3200</MarketValue>
+    
+    <MaxHitPoints>300</MaxHitPoints>
+    <Flammability>0</Flammability>
+    <DeteriorationRate>0</DeteriorationRate>
+    
+</statBases>
+    
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>CannonTurret_Crate</defName>
+    
+<label>120mm tank gun</label>
+    
+<description>use this to build cannon turret.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/WeaponCrate</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Standard_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>1</stackLimit>
+<statBases>
+
+    <MarketValue>4500</MarketValue>
+    
+    <MaxHitPoints>300</MaxHitPoints>
+    <Flammability>0</Flammability>
+    <DeteriorationRate>0</DeteriorationRate>
+    
+</statBases>
+    
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>HowitzerTurret_Crate</defName>
+    
+<label>155mm howitzer gun</label>
+    
+<description>use this to build howitzer turret.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/WeaponCrate</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Standard_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>1</stackLimit>
+<statBases>
+
+    <MarketValue>4500</MarketValue>
+    
+    <MaxHitPoints>300</MaxHitPoints>
+    <Flammability>0</Flammability>
+    <DeteriorationRate>0</DeteriorationRate>
+    
+</statBases>
+    
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>ChainGunTurret_Crate</defName>
+    
+<label>35mm chain gun</label>
+    
+<description>use this to build chain gun turret.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/WeaponCrate</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Standard_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>1</stackLimit>
+<statBases>
+
+    <MarketValue>3500</MarketValue>
+    
+    <MaxHitPoints>300</MaxHitPoints>
+    <Flammability>0</Flammability>
+    <DeteriorationRate>0</DeteriorationRate>
+    
+</statBases>
+    
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>NavalGun28cm_Crate</defName>
+    
+<label>28cm naval gun</label>
+    
+<description>use this to build 28cm naval gun turret.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/WeaponCrate</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Standard_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>1</stackLimit>
+<statBases>
+
+    <MarketValue>5500</MarketValue>
+    
+    <MaxHitPoints>300</MaxHitPoints>
+    <Flammability>0</Flammability>
+    <DeteriorationRate>0</DeteriorationRate>
+    
+</statBases>
+    
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>NavalGun40mm_Crate</defName>
+    
+<label>40mm naval gun</label>
+    
+<description>use this to build 40mm naval gun turret.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/WeaponCrate</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Standard_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>1</stackLimit>
+<statBases>
+
+    <MarketValue>8500</MarketValue>
+    
+    <MaxHitPoints>300</MaxHitPoints>
+    <Flammability>0</Flammability>
+    <DeteriorationRate>0</DeteriorationRate>
+    
+</statBases>
+    
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+</ThingDef>
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>Rockets</defName>
+    
+<label>rockets</label>
+    
+<description>6 Rocktes fired from rocket launcher.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/Rocket</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Metal_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>2</stackLimit>
+<statBases>
+
+    <WorkToMake>8000</WorkToMake>
+    <MarketValue>180</MarketValue>
+    
+    <MaxHitPoints>140</MaxHitPoints>
+    <Flammability>1.0</Flammability>
+    <DeteriorationRate>1</DeteriorationRate>
+    
+</statBases>
+    
+    <costList>
+      <Steel>90</Steel>
+    </costList>
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+ <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <wickTicks>
+          <min>10</min>
+          <max>30</max>
+        </wickTicks>
+      </li>
+</comps>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+</ThingDef>
+
+
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>TurretIncendiaryGrenade</defName>
+    
+<label>incendiary grenades</label>
+    
+<description>4 incendiary grenades fired from incendiary grenade launcher.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/TurretIncendiaryGrenade</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Metal_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>25</stackLimit>
+<statBases>
+
+    <WorkToMake>3000</WorkToMake>
+    <MarketValue>40</MarketValue>
+    
+    <Flammability>1.0</Flammability>
+    <DeteriorationRate>1</DeteriorationRate>
+    
+</statBases>
+    
+    <costList>
+      <Steel>20</Steel>
+    </costList>
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+ <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.4</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <wickTicks>
+          <min>10</min>
+          <max>30</max>
+        </wickTicks>
+      </li>
+</comps>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+</ThingDef>
+
+
+
+<ThingDef ParentName="ResourceBase">
+    
+<defName>NavalGunShell</defName>
+    
+<label>naval gun shell</label>
+    
+<description>big caliber naval gun shell.</description>
+    
+<graphicData>
+<texPath>Things/Item/Resource/NavalGunShell</texPath>
+  
+<graphicClass>Graphic_Single</graphicClass>  
+</graphicData>
+<soundInteract>Metal_Drop</soundInteract>
+    
+<soundDrop>Standard_Drop</soundDrop>
+
+<tickerType>Normal</tickerType>
+<stackLimit>5</stackLimit>
+<statBases>
+
+    <WorkToMake>6000</WorkToMake>
+    <MarketValue>120</MarketValue>
+    
+    <MaxHitPoints>140</MaxHitPoints>
+    <Flammability>1.0</Flammability>
+    <DeteriorationRate>1</DeteriorationRate>
+    
+</statBases>
+   
+    <costList>
+      <Steel>60</Steel>
+    </costList> 
+<thingCategories>
+ 
+    <li>Manufactured</li>
+    
+</thingCategories> 
+ <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>5</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <wickTicks>
+          <min>10</min>
+          <max>30</max>
+        </wickTicks>
+      </li>
+</comps>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Smith</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+    </recipeMaker>
+</ThingDef>
+
+
+
+
+</Resources>
