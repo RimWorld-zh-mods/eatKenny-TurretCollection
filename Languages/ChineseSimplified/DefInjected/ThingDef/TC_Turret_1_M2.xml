@@ -4,7 +4,7 @@
   <!-- M2 Browning -->
 
   <TC_Turret_M2Browning.label>M2勃朗宁重机枪</TC_Turret_M2Browning.label>
-  <TC_Turret_M2Browning.description>需要人员操作的M2勃朗宁重机枪</TC_Turret_M2Browning.description>
+  <TC_Turret_M2Browning.description>需要人员操作的M2勃朗宁重机枪。</TC_Turret_M2Browning.description>
   <TC_Turret_M2Browning_Blueprint_Install.label>M2勃朗宁重机枪（蓝图）</TC_Turret_M2Browning_Blueprint_Install.label>
 
   <TC_Bullet_M2Browning.label>.50 BMG</TC_Bullet_M2Browning.label>
