@@ -56,6 +56,8 @@ Build Cost: Tesla coil (Make at machining table.)
 A smart anti-personnel mine, launch itself to the enemy within a small radius and explode.  
 Make at machining table.  
 
+**orbital arms dealer**
+
 
 ## Licens
 
