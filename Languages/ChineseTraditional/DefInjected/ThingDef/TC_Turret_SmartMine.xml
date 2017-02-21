@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Smart Mine -->
+
+  <TC_Turret_SmartMine.label>智能地雷</TC_Turret_SmartMine.label>
+  <TC_Turret_SmartMine.description>智能反人員地雷，能將自身發射向近處的敵人並引爆。</TC_Turret_SmartMine.description>
+  <TC_Turret_SmartMine_Blueprint_Install.label>智能地雷（藍圖）</TC_Turret_SmartMine_Blueprint_Install.label>
+
+  <TC_Bullet_SmartMine.label>智能地雷</TC_Bullet_SmartMine.label>
+
+  <TC_Gun_SmartMine.label>智能地雷</TC_Gun_SmartMine.label>
+  <TC_Gun_SmartMine.description>智能地雷</TC_Gun_SmartMine.description>
+
+
+</LanguageData>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TC_SmartMine.label>TC：智能地雷</TC_SmartMine.label>
+  <TC_SmartMine.description>解鎖製作智能地雷。</TC_SmartMine.description>
+
+  <TC_AMTurret.label>TC：反器材炮塔</TC_AMTurret.label>
+  <TC_AMTurret.description>解鎖建造自動化的反器材炮塔。</TC_AMTurret.description>
+
+  <TC_HeavyTurret.label>TC：重型炮塔</TC_HeavyTurret.label>
+  <TC_HeavyTurret.description>解鎖建造更強力的重型炮塔。</TC_HeavyTurret.description>
+
+  <TC_TeslaTurret.label>TC：特斯拉炮塔</TC_TeslaTurret.label>
+  <TC_TeslaTurret.description>解鎖建造自動化的特斯拉炮塔。</TC_TeslaTurret.description>
+
+
+</LanguageData>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Anti-materiel Turret -->
+
+  <TC_Turret_AM.label>反器材炮塔</TC_Turret_AM.label>
+  <TC_Turret_AM.description>安装了.50口径反器材枪的炮塔，自动对敌人开火。</TC_Turret_AM.description>
+  <TC_Turret_AM_Blueprint.label>反器材炮塔（蓝图）</TC_Turret_AM_Blueprint.label>
+  <TC_Turret_AM_Blueprint_Install.label>反器材炮塔（蓝图）</TC_Turret_AM_Blueprint_Install.label>
+  <TC_Turret_AM_Frame.label>反器材炮塔（建造中）</TC_Turret_AM_Frame.label>
+
+  <TC_Bullet_AM.label>.50 BMG</TC_Bullet_AM.label>
+
+  <TC_Gun_AM.label>炮塔用.50反器材枪</TC_Gun_AM.label>
+  <TC_Gun_AM.description>炮塔用.50反器材枪</TC_Gun_AM.description>
+
+  <TC_Crate_AM.label>炮塔用.50反器材枪</TC_Crate_AM.label>
+  <TC_Crate_AM.description>炮塔用.50反器材枪，用于建造反器材炮塔.</TC_Crate_AM.description>
+
+
+</LanguageData>

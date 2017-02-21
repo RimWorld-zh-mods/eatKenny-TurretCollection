@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Rocket Launcher -->
+
+  <TC_Turret_Rocket.label>火箭发射器</TC_Turret_Rocket.label>
+  <TC_Turret_Rocket.description>火箭发射器每次齐射对目标区域发射6发火箭。可以越墙开火，需要人员操作。</TC_Turret_Rocket.description>
+  <TC_Turret_Rocket_Blueprint.label>火箭发射器（蓝图）</TC_Turret_Rocket_Blueprint.label>
+  <TC_Turret_Rocket_Frame.label>火箭发射器（建造中）</TC_Turret_Rocket_Frame.label>
+
+  <TC_Bullet_Rocket.label>132mm火箭</TC_Bullet_Rocket.label>
+
+  <TC_Gun_Rocket.label>132mm火箭发射器</TC_Gun_Rocket.label>
+  <TC_Gun_Rocket.description>132mm火箭发射器</TC_Gun_Rocket.description>
+
+  <TC_Shell_Rocket.label>132mm火箭</TC_Shell_Rocket.label>
+  <TC_Shell_Rocket.description>一组6发火箭，由火箭发射器发射.</TC_Shell_Rocket.description>
+
+
+</LanguageData>

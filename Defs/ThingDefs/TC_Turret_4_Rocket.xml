@@ -5,7 +5,7 @@
 
   <ThingDef ParentName="TC_BuildingBase">
     <defName>TC_Turret_Rocket</defName>
-    <label>rocket launcher turret</label>
+    <label>rocket launcher</label>
     <description>Rocket launcher fires 6 rockets at target area with each volley. Fires over wall, need to be manned.</description>
     <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
     <graphicData>

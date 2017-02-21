@@ -3,7 +3,7 @@
 
   <TraderKindDef>
     <defName>TC_ArmsDealer</defName>
-    <label>arms dealer</label>
+    <label>orbital arms dealer</label>
     <orbital>true</orbital>
     <stockGenerators>
       <li Class="StockGenerator_SingleDef">

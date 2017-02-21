@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Cannon Turret -->
+
+  <TC_Turret_Cannon.label>加农炮塔</TC_Turret_Cannon.label>
+  <TC_Turret_Cannon.description>装载了坦克上的120mm加农炮的炮塔。直接命中会造成附加的穿甲伤害。</TC_Turret_Cannon.description>
+  <TC_Turret_Cannon_Blueprint.label>加农炮塔（蓝图）</TC_Turret_Cannon_Blueprint.label>
+  <TC_Turret_Cannon_Frame.label>加农炮塔（建造中）</TC_Turret_Cannon_Frame.label>
+
+  <TC_Bullet_Cannon.label>120mm高爆反坦克弹头</TC_Bullet_Cannon.label>
+
+  <TC_Gun_Cannon.label>120mm加农炮</TC_Gun_Cannon.label>
+  <TC_Gun_Cannon.description>120mm加农炮</TC_Gun_Cannon.description>
+
+  <TC_Crate_Cannon.label>120mm加农炮</TC_Crate_Cannon.label>
+  <TC_Crate_Cannon.description>坦克上的120mm加农炮，用于建造加农炮塔。</TC_Crate_Cannon.description>
+
+  <TC_Shell_Cannon.label>120mm加农炮弹</TC_Shell_Cannon.label>
+  <TC_Shell_Cannon.description>120mm坦克炮发射的高爆炮弹。受损时会发生爆炸。</TC_Shell_Cannon.description>
+
+
+</LanguageData>

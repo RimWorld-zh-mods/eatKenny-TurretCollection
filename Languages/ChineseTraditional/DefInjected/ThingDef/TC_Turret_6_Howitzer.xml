@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Howitzer Turret -->
+
+  <TC_Turret_Howitzer.label>榴彈炮塔</TC_Turret_Howitzer.label>
+  <TC_Turret_Howitzer.description>裝載了155mm榴彈炮的炮塔。能越牆開火，需要人員操作。</TC_Turret_Howitzer.description>
+  <TC_Turret_Howitzer_Blueprint.label>榴彈炮塔（藍圖）</TC_Turret_Howitzer_Blueprint.label>
+  <TC_Turret_Howitzer_Frame.label>榴彈炮塔（建造中）</TC_Turret_Howitzer_Frame.label>
+
+  <TC_Bullet_Howitzer.label>155mm高爆彈頭</TC_Bullet_Howitzer.label>
+
+  <TC_Gun_Howitzer.label>155mm榴彈炮</TC_Gun_Howitzer.label>
+  <TC_Gun_Howitzer.description>155mm榴彈炮</TC_Gun_Howitzer.description>
+
+  <TC_Crate_Howitzer.label>155mm榴彈炮</TC_Crate_Howitzer.label>
+  <TC_Crate_Howitzer.description>155mm榴彈炮，用於建造榴彈炮塔。</TC_Crate_Howitzer.description>
+
+  <TC_Shell_Howitzer.label>155mm榴彈炮彈</TC_Shell_Howitzer.label>
+  <TC_Shell_Howitzer.description>155mm榴彈炮發射的高爆炮彈。受損時會發生爆炸。</TC_Shell_Howitzer.description>
+
+
+</LanguageData>

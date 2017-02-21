@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Chain Gun Turret -->
+
+  <TC_Turret_ChainGun.label>鏈炮炮塔</TC_Turret_ChainGun.label>
+  <TC_Turret_ChainGun.description>裝載了25mm鏈炮的炮塔。直接命中會造成額外的穿甲傷害。需要人員操作。</TC_Turret_ChainGun.description>
+  <TC_Turret_ChainGun_Blueprint.label>鏈炮炮塔（藍圖）</TC_Turret_ChainGun_Blueprint.label>
+  <TC_Turret_ChainGun_Frame.label>鏈炮炮塔（建造中）</TC_Turret_ChainGun_Frame.label>
+
+  <TC_Bullet_ChainGun.label>25mm彈頭</TC_Bullet_ChainGun.label>
+
+  <TC_Gun_ChainGun.label>25mm鏈炮</TC_Gun_ChainGun.label>
+  <TC_Gun_ChainGun.description>25mm鏈炮</TC_Gun_ChainGun.description>
+
+  <TC_Crate_ChainGun.label>25mm鏈炮</TC_Crate_ChainGun.label>
+  <TC_Crate_ChainGun.description>25mm鏈炮，用於建造鏈炮炮塔。</TC_Crate_ChainGun.description>
+
+
+</LanguageData>

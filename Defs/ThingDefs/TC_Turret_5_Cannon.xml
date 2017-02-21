@@ -6,7 +6,7 @@
   <ThingDef ParentName="TC_BuildingBase">
     <defName>TC_Turret_Cannon</defName>
     <label>cannon turret</label>
-    <description>A turret mounted with a 120mm tank gun. deals extra armor-piercing damage if the round has a direct hit.</description>
+    <description>A turret mounted with a 120mm cannon gun on tanks. deals extra armor-piercing damage if the round has a direct hit.</description>
     <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_Heavy</texPath>
@@ -143,7 +143,7 @@
   <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Crate_Cannon</defName>
     <label>120mm cannon gun</label>
-    <description>120mm cannon gun on tank, use this to build cannon turret.</description>
+    <description>120mm cannon gun on tanks, use this to build cannon turret.</description>
     <graphicData>
       <texPath>TC/Item/WeaponCrate</texPath>
       <graphicClass>Graphic_Single</graphicClass>

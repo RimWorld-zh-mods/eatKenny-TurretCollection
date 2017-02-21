@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 40mm Naval Gun Turret -->
+
+  <TC_Turret_NavalGun40mm.label>40mm艦炮炮塔</TC_Turret_NavalGun40mm.label>
+  <TC_Turret_NavalGun40mm.description>對敵人連續快速開火的40mm艦炮。直接命中會造成額外的穿甲傷害。需要人員操作。</TC_Turret_NavalGun40mm.description>
+  <TC_Turret_NavalGun40mm_Blueprint.label>40mm艦炮炮塔（藍圖）</TC_Turret_NavalGun40mm_Blueprint.label>
+  <TC_Turret_NavalGun40mm_Frame.label>40mm艦炮炮塔（建造中）</TC_Turret_NavalGun40mm_Frame.label>
+
+  <TC_Bullet_NavalGun40mm.label>40mm艦炮彈頭</TC_Bullet_NavalGun40mm.label>
+
+  <TC_Gun_NavalGun40mm.label>40mm艦炮</TC_Gun_NavalGun40mm.label>
+  <TC_Gun_NavalGun40mm.description>40mm艦炮</TC_Gun_NavalGun40mm.description>
+
+  <TC_Crate_NavalGun40mm.label>40mm艦炮</TC_Crate_NavalGun40mm.label>
+  <TC_Crate_NavalGun40mm.description>40mm艦炮，用於建造40mm艦炮炮塔。</TC_Crate_NavalGun40mm.description>
+
+
+</LanguageData>

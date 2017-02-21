@@ -6,7 +6,7 @@
   <ThingDef ParentName="TC_BuildingBase">
     <defName>TC_Turret_Tesla</defName>
     <label>tesla turret</label>
-    <description>The tesla turret is a short range defense turret, it uses a combination of electricity generation and atmosphere ionization to hurl artificial lightning bolts at hostile attackers. Fires over wall.</description>
+    <description>The tesla turret is a short range defense turret, it uses a combination of electricity generation and atmosphere ionization to hurl artificial lightning bolts at hostile attackers.</description>
     <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_Tesla</texPath>
@@ -26,7 +26,7 @@
       <MaxHitPoints>300</MaxHitPoints>
       <Flammability>0.5</Flammability>
       <WorkToBuild>7200</WorkToBuild>
-      <Mass>400</Mass>
+      <Mass>300</Mass>
       <Beauty>-60</Beauty>
     </statBases>
     <tickerType>Normal</tickerType>
@@ -142,7 +142,7 @@
       <MaxHitPoints>300</MaxHitPoints>
       <MarketValue>8600</MarketValue>
       <WorkToMake>100000</WorkToMake>
-      <Mass>20</Mass>
+      <Mass>100</Mass>
       <Flammability>0</Flammability>
 			<DeteriorationRate>0</DeteriorationRate>
 		</statBases>

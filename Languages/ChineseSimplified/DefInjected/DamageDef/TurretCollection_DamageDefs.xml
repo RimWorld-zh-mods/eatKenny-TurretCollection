@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <TC_ArmorPiercing.label>穿甲</TC_ArmorPiercing.label>
+  <TC_ArmorPiercing.deathMessage>{0}被射杀了。</TC_ArmorPiercing.deathMessage>
+
+  <TC_EletricalBurn.label>电烧伤</TC_EletricalBurn.label>
+  <TC_EletricalBurn.deathMessage>{0}被电死了。</TC_EletricalBurn.deathMessage>
+
+
+</LanguageData>

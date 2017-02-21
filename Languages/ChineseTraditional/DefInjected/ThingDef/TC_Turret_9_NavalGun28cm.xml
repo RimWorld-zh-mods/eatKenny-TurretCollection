@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- 28cm Naval Gun Turret -->
+
+  <TC_Turret_NavalGun28cm.label>28cm艦炮炮塔</TC_Turret_NavalGun28cm.label>
+  <TC_Turret_NavalGun28cm.description>古代德國的28cm艦炮，是1934年設計用於沙恩霍斯特级战列巡洋舰上的283mm口徑大炮。可遠距離發射高爆炮彈，造成大範圍的毀滅傷害。可越牆攻擊，需要人員操作。</TC_Turret_NavalGun28cm.description>
+  <TC_Turret_NavalGun28cm_Blueprint.label>28cm艦炮炮塔（藍圖）</TC_Turret_NavalGun28cm_Blueprint.label>
+  <TC_Turret_NavalGun28cm_Frame.label>28cm艦炮炮塔（建造中）</TC_Turret_NavalGun28cm_Frame.label>
+
+  <TC_Bullet_NavalGun28cm.label>28cm艦炮彈頭</TC_Bullet_NavalGun28cm.label>
+
+  <TC_Gun_NavalGun28cm.label>28cm艦炮</TC_Gun_NavalGun28cm.label>
+  <TC_Gun_NavalGun28cm.description>28cm艦炮</TC_Gun_NavalGun28cm.description>
+
+  <TC_Crate_NavalGun28cm.label>28cm艦炮</TC_Crate_NavalGun28cm.label>
+  <TC_Crate_NavalGun28cm.description>28cm艦炮，用於建造28cm艦炮炮塔。</TC_Crate_NavalGun28cm.description>
+
+  <TC_Shell_NavalGun28cm.label>28cm艦炮炮彈</TC_Shell_NavalGun28cm.label>
+  <TC_Shell_NavalGun28cm.description>大口徑艦炮炮彈。</TC_Shell_NavalGun28cm.description>
+
+
+</LanguageData>

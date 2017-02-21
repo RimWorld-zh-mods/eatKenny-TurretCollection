@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Incendiary Grenade Launcher -->
+
+  <TC_Turret_IncendiaryGrenade.label>燃烧榴弹发射器</TC_Turret_IncendiaryGrenade.label>
+  <TC_Turret_IncendiaryGrenade.description>燃烧榴弹发射器每次对目标区域齐射4发燃烧榴弹。可以越墙开火，需要人员操作。</TC_Turret_IncendiaryGrenade.description>
+  <TC_Turret_IncendiaryGrenade_Blueprint_Install.label>燃烧榴弹发射器（蓝图）</TC_Turret_IncendiaryGrenade_Blueprint_Install.label>
+
+  <TC_Bullet_IncendiaryGrenade.label>燃烧榴弹</TC_Bullet_IncendiaryGrenade.label>
+
+  <TC_Gun_IncendiaryGrenade.label>燃烧榴弹发射器</TC_Gun_IncendiaryGrenade.label>
+  <TC_Gun_IncendiaryGrenade.description>燃烧榴弹发射器</TC_Gun_IncendiaryGrenade.description>
+
+  <TC_Shell_IncendiaryGrenade.label>燃烧榴弹</TC_Shell_IncendiaryGrenade.label>
+  <TC_Shell_IncendiaryGrenade.description>4发燃烧榴弹，由燃烧榴弹发射器发射。</TC_Shell_IncendiaryGrenade.description>
+
+
+</LanguageData>

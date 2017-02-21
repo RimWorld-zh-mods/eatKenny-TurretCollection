@@ -6,7 +6,7 @@
   <ThingDef ParentName="TC_BuildingBase">
     <defName>TC_Turret_IncendiaryGrenade</defName>
     <label>incendiary grenade launcher</label>
-    <description>Incendiary grenade launcher fires 4 incendiary grenades at target area with each volley. Fires over wall, need to be manned.</description>
+    <description>Incendiary grenade launcher fires 4 incendiary grenades at target area with each volley. Fires over walll, need to be manned.</description>
     <thingClass>Building_TurretGun</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_Light</texPath>

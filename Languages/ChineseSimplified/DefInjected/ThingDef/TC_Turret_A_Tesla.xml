@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Tesla Turret -->
+
+  <TC_Turret_Tesla.label>特斯拉炮塔</TC_Turret_Tesla.label>
+  <TC_Turret_Tesla.description>特斯拉炮塔是一种近距离防御炮塔，结合电力激发和空气离子化对敌方入侵者抛射人造闪电。</TC_Turret_Tesla.description>
+  <TC_Turret_Tesla_Blueprint.label>特斯拉炮塔（蓝图）</TC_Turret_Tesla_Blueprint.label>
+  <TC_Turret_Tesla_Blueprint_Install.label>特斯拉炮塔（蓝图）</TC_Turret_Tesla_Blueprint_Install.label>
+  <TC_Turret_Tesla_Frame.label>特斯拉炮塔（建造中）</TC_Turret_Tesla_Frame.label>
+
+  <TC_Bullet_Tesla.label>电弧</TC_Bullet_Tesla.label>
+
+  <TC_Gun_Tesla.label>特斯拉线圈</TC_Gun_Tesla.label>
+  <TC_Gun_Tesla.description>特斯拉线圈</TC_Gun_Tesla.description>
+
+  <TC_Crate_Tesla.label>特斯拉线圈</TC_Crate_Tesla.label>
+  <TC_Crate_Tesla.description>特斯拉线圈，用于建造特斯拉炮塔。</TC_Crate_Tesla.description>
+
+
+</LanguageData>

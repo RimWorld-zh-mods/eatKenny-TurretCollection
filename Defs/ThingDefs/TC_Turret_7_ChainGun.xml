@@ -6,7 +6,7 @@
   <ThingDef ParentName="TC_BuildingBase">
     <defName>TC_Turret_ChainGun</defName>
     <label>chain gun turret</label>
-    <description>A turret mounted with a 35mm chain gun, deals extra armor-piercing damage if the round has a direct hit. Need to be manned.</description>
+    <description>A turret mounted with a 25mm chain gun, deals extra armor-piercing damage if the round has a direct hit. Need to be manned.</description>
     <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_Heavy</texPath>

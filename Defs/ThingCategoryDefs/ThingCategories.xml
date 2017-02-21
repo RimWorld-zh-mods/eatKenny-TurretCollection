@@ -9,7 +9,7 @@
 
   <ThingCategoryDef>
     <defName>TC_CrateWeapons</defName>
-    <label>crate weapons</label>
+    <label>weapon crates</label>
     <parent>Weapons</parent>
   </ThingCategoryDef>
 
