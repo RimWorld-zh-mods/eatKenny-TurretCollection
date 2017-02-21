@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ================ Smart Mine ================ -->
+
+  <ThingDef ParentName="TC_BuildingBase">
+    <defName>TC_Turret_SmartMine</defName>
+    <label>smart mine</label>
+    <description>A smart anti-personnel mine, launch itself to the enemy within a small radius and explode.</description>
+    <thingClass>TurretCollection.Building_SmartMine</thingClass>
+    <graphicData>
+      <texPath>TC/Building/SmartMineBase</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rect>(0.1,0,0.8,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <minifiedDef>TC_MinifiedSmartMine</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>false</rotatable>
+    <statBases>
+      <MarketValue>250</MarketValue>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Flammability>0</Flammability>
+	    <WorkToMake>16000</WorkToMake>
+      <Mass>58</Mass>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>2.9</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+      </li>
+    </comps>
+    <castEdgeShadows>false</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>15</Steel>
+      <Component>2</Component>
+    </costList>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <building>
+      <turretGunDef>TC_Gun_SmartMine</turretGunDef>
+      <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+      <turretBurstCooldownTime>1.0</turretBurstCooldownTime>
+      <turretTopgraphicPath>Inv</turretTopgraphicPath>
+    </building>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>TC_SmartMine</researchPrerequisite>
+    </recipeMaker>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseBullet">
+    <defName>TC_Bullet_SmartMine</defName>
+    <label>smart mine</label>
+    <thingClass>Projectile_Explosive</thingClass>  
+    <graphicData>
+      <texPath>TC/Projectile/SmartMine</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>50</damageAmountBase>
+      <explosionRadius>2.9</explosionRadius>
+      <speed>30</speed>
+      <soundExplode>TC_Explosion</soundExplode>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseGun">
+    <defName>TC_Gun_SmartMine</defName>
+    <label>smart mine</label>
+    <description>smart mine</description>
+    <graphicData>
+      <texPath>TC/CH</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <soundInteract>InteractRifle</soundInteract>
+    <canBeSpawningInventory>false</canBeSpawningInventory>
+    <tradeability>Never</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <statBases>
+      <AccuracyTouch>1.00</AccuracyTouch>
+      <AccuracyShort>1.00</AccuracyShort>
+      <AccuracyMedium>1.00</AccuracyMedium>
+      <AccuracyLong>1.00</AccuracyLong>
+      <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_LaunchProjectile</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>TC_Bullet_SmartMine</projectileDef>
+        <warmupTime>1.5</warmupTime>
+        <range>5</range>
+        <soundCast>InteractGrenade</soundCast>
+      </li>
+    </verbs>
+  </ThingDef>
+
+</Defs>

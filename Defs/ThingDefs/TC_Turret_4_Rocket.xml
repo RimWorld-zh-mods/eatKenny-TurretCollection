@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ================ Rocket Launcher ================ -->
+
+  <ThingDef ParentName="TC_BuildingBase">
+    <defName>TC_Turret_Rocket</defName>
+    <label>rocket launcher turret</label>
+    <description>Rocket launcher fires 6 rockets at target area with each volley. Fires over wall, need to be manned.</description>
+    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
+    <graphicData>
+      <texPath>TC/Building/Turret_Heavy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0.38,0.2,0.56375,0.8)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>10000</WorkToBuild>
+      <Mass>3150</Mass>
+      <Beauty>-60</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>600</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="TurretCollection.CompProperties_TurretTopSize">
+        <topSize>(1.3,1.3,1.3)</topSize>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>600</costStuffCount>
+    <costList>
+      <Steel>600</Steel>
+      <Component>12</Component>
+    </costList>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <building>
+      <turretGunDef>TC_Gun_Rocket</turretGunDef>
+      <turretShellDef>TC_Shell_Rocket</turretShellDef>
+      <turretBurstwarmupTime>6.0</turretBurstwarmupTime>
+      <turretBurstCooldownTime>18.0</turretBurstCooldownTime>
+      <turretTopgraphicPath>TC/Building/TurretTop_Rocket</turretTopgraphicPath>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>TC_HeavyTurret</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseExtraDamageTrailBullet">
+    <defName>TC_Bullet_Rocket</defName>
+    <label>132mm rocket</label>
+    <graphicData>
+      <texPath>TC/Projectile/130mmRocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>70</damageAmountBase>
+      <explosionRadius>3.2</explosionRadius>
+      <speed>60</speed>
+      <flyOverhead>true</flyOverhead>
+      <soundExplode>TC_Explosion</soundExplode>
+      <soundHitThickRoof>ArtilleryHitThickRoof</soundHitThickRoof>
+      <soundAmbient>MortarRound_Ambient</soundAmbient>
+      <soundImpactAnticipate>TC_RL_PreImpact</soundImpactAnticipate>
+    </projectile>
+    <comps>
+			<li Class="TurretCollection.CompProperties_ExtraDamage">
+				<ExtraDamageAmount>80</ExtraDamageAmount>
+        <ExtraDamageDef>Bomb</ExtraDamageDef>
+			</li>
+		</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseGun">
+    <defName>TC_Gun_Rocket</defName>
+    <label>132mm rocket launcher</label>
+    <description>132mm rocket launcher</description>
+    <graphicData>
+      <texPath>TC/CH</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <soundInteract>InteractRifle</soundInteract>
+    <canBeSpawningInventory>false</canBeSpawningInventory>
+    <tradeability>Never</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <statBases>
+      <MarketValue>4800</MarketValue>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.42</AccuracyShort>
+      <AccuracyMedium>0.30</AccuracyMedium>
+      <AccuracyLong>0.18</AccuracyLong>
+      <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>Artillery</li>
+      <li>Artillery_BaseDestroyer</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>TC_Bullet_Rocket</projectileDef>
+        <forcedMissRadius>7</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <minRange>50</minRange>
+        <range>800</range>
+        <burstShotCount>6</burstShotCount>
+        <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
+        <soundCast>TC_130mmRocket</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_ResourceBase">
+    <defName>TC_Shell_Rocket</defName>
+    <label>132mm rockets</label>
+    <description>A set of 6 Rocktes fired from rocket launcher.</description>
+    <graphicData>
+      <texPath>TC/Item/Shell_Rocket</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <tickerType>Normal</tickerType>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>100</MarketValue>
+      <WorkToMake>4200</WorkToMake>
+      <Mass>29.4</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <costList>
+      <Steel>45</Steel>
+    </costList>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>5.1</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <wickTicks>
+          <min>10</min>
+          <max>30</max>
+        </wickTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DefPackage-SoundDef>
+
   <SoundDef>
-    <defName>50Cal</defName>
+    <defName>TC_50Cal</defName>
+    <context>MapOnly</context>
     <eventNames />
-           <maxVoices>4</maxVoices>
-           <maxSimultaneous>1</maxSimultaneous>
+    <maxVoices>4</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>AMTurret/50Cal</clipPath>
+            <clipPath>TC/AMTurret/50Cal</clipPath>
           </li>
         </grains>
         <volumeRange>
@@ -23,4 +25,5 @@
       </li>
     </subSounds>
   </SoundDef>
+
 </DefPackage-SoundDef>

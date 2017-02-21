@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <ThingDef Name="TC_MinifiedBase" Abstract="True">
+    <thingClass>MinifiedThing</thingClass>
+    <category>Item</category>
+    <useHitPoints>true</useHitPoints>
+    <selectable>true</selectable>
+    <altitudeLayer>Item</altitudeLayer>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <!-- for CompForbiddable -->
+    <drawerType>RealtimeOnly</drawerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+    </comps>
+    <alwaysHaulable>true</alwaysHaulable>
+    <rotatable>false</rotatable>
+    <pathCost>15</pathCost>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_MinifiedBase">
+    <defName>TC_MinifiedWeapon</defName>
+    <label>heavy gun</label>
+    <thingCategories>
+      <li>TC_HeavyWeapons</li>
+    </thingCategories>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_MinifiedBase">
+    <defName>TC_MinifiedSmartMine</defName>
+    <label>smart mine</label>
+    <thingCategories>
+      <li>TC_HeavyWeapons</li>
+    </thingCategories>
+  </ThingDef>
+
+</Defs>

@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DefPackage-SoundDef>
+
   <SoundDef>
-    <defName>155mm</defName>
+    <defName>TC_155mm</defName>
+    <context>MapOnly</context>
     <eventNames />
-           <maxVoices>4</maxVoices>
-           <maxSimultaneous>1</maxSimultaneous>
+    <maxVoices>4</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>CannonTurret/155mm</clipPath>
+            <clipPath>TC/CannonTurret/155mm</clipPath>
           </li>
         </grains>
         <volumeRange>
@@ -23,4 +25,5 @@
       </li>
     </subSounds>
   </SoundDef>
+
 </DefPackage-SoundDef>

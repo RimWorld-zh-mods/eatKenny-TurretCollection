@@ -28,7 +28,7 @@ namespace TurretCollection
             else
             {
                 if (this.burstCooldownTicksLeft > 0)
-                    Find.ThingGrid.ThingAt(this.Position, ThingDef.Named("Turret_SmartMine")).Destroy(DestroyMode.Vanish);
+                    Find.VisibleMap.thingGrid.ThingAt(this.Position, ThingDef.Named("TC_Turret_SmartMine")).Destroy(DestroyMode.Vanish);
             }
             this.top.TurretTopTick();
         }

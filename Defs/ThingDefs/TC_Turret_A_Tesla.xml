@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ================ Tesla Turret ================ -->
+
+  <ThingDef ParentName="TC_BuildingBase">
+    <defName>TC_Turret_Tesla</defName>
+    <label>tesla turret</label>
+    <description>The tesla turret is a short range defense turret, it uses a combination of electricity generation and atmosphere ionization to hurl artificial lightning bolts at hostile attackers. Fires over wall.</description>
+    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
+    <graphicData>
+      <texPath>TC/Building/Turret_Tesla</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rect>(0.38,0.2,0.56375,0.8)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedFurniture</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <size>(3,3)</size>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>7200</WorkToBuild>
+      <Mass>400</Mass>
+      <Beauty>-60</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>6400</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="TurretCollection.CompProperties_TurretTopSize">
+        <topSize>(1.6,1.6,1.6)</topSize>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <costList>
+      <Steel>350</Steel>
+      <Plasteel>50</Plasteel>
+      <Component>15</Component>
+      <TC_Crate_Tesla>1</TC_Crate_Tesla>
+    </costList>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <building>
+      <ai_combatDangerous>true</ai_combatDangerous>
+      <turretGunDef>TC_Gun_Tesla</turretGunDef>
+      <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
+      <turretBurstCooldownTime>10</turretBurstCooldownTime>
+      <turretTopgraphicPath>TC/Building/TurretTop_Tesla</turretTopgraphicPath>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>TC_TeslaTurret</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseBullet">
+    <defName>TC_Bullet_Tesla</defName>
+    <label>electric arc</label>
+    <thingClass>TurretCollection.Projectile_ElectricArc</thingClass>
+    <graphicData>
+      <texPath>TC/Projectile/TeslaCoilPlasma</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>TC_EletricalBurn</damageDef>
+      <damageAmountBase>4</damageAmountBase>
+    </projectile>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseGun">
+    <defName>TC_Gun_Tesla</defName>
+    <label>tesla coil</label>
+    <description>tesla coil</description>
+    <graphicData>
+      <texPath>TC/CH</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <soundInteract>InteractRifle</soundInteract>
+    <canBeSpawningInventory>false</canBeSpawningInventory>
+    <tradeability>Never</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <statBases>
+      <AccuracyTouch>1.00</AccuracyTouch>
+      <AccuracyShort>1.00</AccuracyShort>
+      <AccuracyMedium>1.00</AccuracyMedium>
+      <AccuracyLong>1.00</AccuracyLong>
+      <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>TC_Bullet_Tesla</projectileDef>
+        <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
+        <burstShotCount>10</burstShotCount>
+        <AccuracyTouch>1.00</AccuracyTouch>
+        <AccuracyShort>1.00</AccuracyShort>
+        <AccuracyMedium>1.00</AccuracyMedium>
+        <AccuracyLong>1.00</AccuracyLong>
+        <warmupTime>10</warmupTime>
+        <range>12</range>
+        <soundCast>TC_TeslaCoil</soundCast>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_ResourceBase">
+    <defName>TC_Crate_Tesla</defName>
+    <label>tesla coil</label>
+    <description>Tesla coil, use this to build tesla turret.</description>
+    <graphicData>
+      <texPath>TC/Item/WeaponCrate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <MarketValue>8600</MarketValue>
+      <WorkToMake>100000</WorkToMake>
+      <Mass>20</Mass>
+      <Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+    <costList>
+      <Steel>100</Steel>
+      <Plasteel>100</Plasteel>
+      <Component>10</Component>
+    </costList>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>TC_CrateWeapons</li>
+    </thingCategories>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+      <unfinishedThingDef>UnfinishedGun</unfinishedThingDef>
+      <researchPrerequisite>TC_TeslaTurret</researchPrerequisite>
+    </recipeMaker>
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>

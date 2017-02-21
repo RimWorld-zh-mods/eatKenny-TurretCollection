@@ -32,7 +32,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Assembly-CSharp">
-      <HintPath>Source-DLLs\Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\..\..\..\Game\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\Assembly-CSharp.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
@@ -42,17 +42,19 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="UnityEngine">
-      <HintPath>Source-DLLs\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\..\..\Game\Steam\steamapps\common\RimWorld\RimWorldWin_Data\Managed\UnityEngine.dll</HintPath>
       <Private>False</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Building_TurretGunXL.cs" />
-    <Compile Include="Projectile_Laser.cs" />
-    <Compile Include="TurretTopXL.cs" />
+    <Compile Include="Building_TurretGunCustomTop.cs" />
+    <Compile Include="CompProperties_TurretTopSize.cs" />
+    <Compile Include="CompTurretTopSize.cs" />
+    <Compile Include="Projectile_ElectricArc.cs" />
+    <Compile Include="TurretTopCustomSize.cs" />
     <Compile Include="Building_SmartMine.cs" />
     <Compile Include="CompExtraDamage.cs" />
-    <Compile Include="CompExtraDamage_Properties.cs" />
+    <Compile Include="CompProperties_ExtraDamage.cs" />
     <Compile Include="Projectile_ExtraDamageTrailBullet.cs" />
     <Compile Include="Projectile_ExtraDamageBullet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

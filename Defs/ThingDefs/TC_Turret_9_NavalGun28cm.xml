@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ================ 28cm Naval Gun Turret ================ -->
+
+  <ThingDef ParentName="TC_BuildingBase">
+    <defName>TC_Turret_NavalGun28cm</defName>
+    <label>28cm NavalGun Turret</label>
+    <description>The ancient German 28cm naval gun was a 283 mm caliber gun designed in 1934 used on the Scharnhorst class battleships. It fires HE shells at long distance, deals devastating damage in large area. Fires over wall, need to be manned.</description>
+    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
+    <graphicData>
+      <texPath>TC/Building/Turret_NavalGun28cm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(5,5)</drawSize>
+      <damageData>
+        <rect>(0,0,5,5)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-3)</interactionCellOffset>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <size>(5,5)</size>
+    <statBases>
+      <MaxHitPoints>3200</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>64000</WorkToBuild>
+      <Beauty>-60</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>3200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="TurretCollection.CompProperties_TurretTopSize">
+        <topSize>(3.5,3.5,3.5)</topSize>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>1</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>1200</costStuffCount>
+    <costList>
+      <Steel>1200</Steel>
+      <Component>15</Component>
+      <TC_Crate_NavalGun28cm>1</TC_Crate_NavalGun28cm>
+    </costList>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <building>
+      <turretGunDef>TC_Gun_NavalGun28cm</turretGunDef>
+      <turretShellDef>TC_Shell_NavalGun28cm</turretShellDef>
+      <turretBurstwarmupTime>4</turretBurstwarmupTime>
+      <turretBurstCooldownTime>25</turretBurstCooldownTime>
+      <turretTopgraphicPath>TC/Building/TurretTop_NavalGun28cm</turretTopgraphicPath>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>TC_HeavyTurret</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseExtraDamageBullet">
+    <defName>TC_Bullet_NavalGun28cm</defName>
+    <label>28cm naval gun round</label>
+    <graphicData>
+      <texPath>TC/Projectile/155mmShell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>80</damageAmountBase>
+      <explosionRadius>5</explosionRadius>
+      <speed>80</speed>
+      <flyOverhead>true</flyOverhead>
+      <soundExplode>TC_Explosion</soundExplode>
+      <soundHitThickRoof>ArtilleryHitThickRoof</soundHitThickRoof>
+      <soundImpactAnticipate>TC_RL_PreImpact</soundImpactAnticipate>
+    </projectile>
+    <comps>
+			<li Class="TurretCollection.CompProperties_ExtraDamage">
+				<ExtraDamageAmount>160</ExtraDamageAmount>
+        <ExtraDamageDef>Bomb</ExtraDamageDef>
+			</li>
+		</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseGun">
+    <defName>TC_Gun_NavalGun28cm</defName>
+    <label>28cm naval gun</label>
+    <description>28cm naval gun</description>
+    <graphicData>
+      <texPath>TC/CH</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <soundInteract>InteractRifle</soundInteract>
+    <canBeSpawningInventory>false</canBeSpawningInventory>
+    <tradeability>Never</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <statBases>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.42</AccuracyShort>
+      <AccuracyMedium>0.18</AccuracyMedium>
+      <AccuracyLong>0.02</AccuracyLong>
+      <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>Artillery</li>
+      <li>Artillery_BaseDestroyer</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>TC_Bullet_NavalGun28cm</projectileDef>
+        <burstShotCount>3</burstShotCount>
+        <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+        <forcedMissRadius>11</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <minRange>20</minRange>
+        <range>800</range>
+        <soundCast>TC_280mm</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_ResourceBase">
+    <defName>TC_Crate_NavalGun28cm</defName>
+    <label>28cm naval gun</label>
+    <description>28cm naval gun, use this to build 28cm naval gun turret.</description>
+    <graphicData>
+      <texPath>TC/Item/WeaponCrate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <MarketValue>5500</MarketValue>
+      <Mass>33100</Mass>
+      <Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>TC_CrateWeapons</li>
+    </thingCategories>
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_ResourceBase">
+    <defName>TC_Shell_NavalGun28cm</defName>
+    <label>28cm naval gun shell</label>
+    <description>big caliber naval gun shell.</description>
+    <graphicData>
+      <texPath>TC/Item/Shell_NavalGun28cm</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <tickerType>Normal</tickerType>
+    <stackLimit>2</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>600</MarketValue>
+      <WorkToMake>4200</WorkToMake>
+      <Mass>600</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <costList>
+      <Steel>300</Steel>
+    </costList>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>5</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <wickTicks>
+          <min>10</min>
+          <max>30</max>
+        </wickTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

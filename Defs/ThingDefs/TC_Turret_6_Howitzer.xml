@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ================ Howitzer Turret ================ -->
+
+  <ThingDef ParentName="TC_BuildingBase">
+    <defName>TC_Turret_Howitzer</defName>
+    <label>howitzer turret</label>
+    <description>A turret mounted with a 155mm howitzer. Fires over wall, need to be manned.</description>
+    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
+    <graphicData>
+      <texPath>TC/Building/Turret_Heavy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <damageData>
+        <rect>(0.38,0.2,0.56375,0.8)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-2)</interactionCellOffset>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <size>(3,3)</size>
+    <statBases>
+      <MaxHitPoints>550</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>16000</WorkToBuild>
+      <Mass>3150</Mass>
+      <Beauty>-60</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="TurretCollection.CompProperties_TurretTopSize">
+        <topSize>(1.5,1.5,1.5)</topSize>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.7</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>800</costStuffCount>
+    <costList>
+      <Steel>800</Steel>
+      <Component>15</Component>
+      <TC_Crate_Howitzer>1</TC_Crate_Howitzer>
+    </costList>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <building>
+      <turretGunDef>TC_Gun_Howitzer</turretGunDef>
+      <turretShellDef>TC_Shell_Howitzer</turretShellDef>
+      <turretBurstwarmupTime>4.0</turretBurstwarmupTime>
+      <turretBurstCooldownTime>14.0</turretBurstCooldownTime>
+      <turretTopgraphicPath>TC/Building/TurretTop_Howitzer</turretTopgraphicPath>
+    </building>
+    <placeWorkers>
+      <li>PlaceWorker_NotUnderRoof</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>TC_HeavyTurret</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseExtraDamageBullet">
+    <defName>TC_Bullet_Howitzer</defName>
+    <label>155mm HE round</label>
+    <graphicData>
+      <texPath>TC/Projectile/155mmShell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>120</damageAmountBase>
+      <explosionRadius>3.5</explosionRadius>
+      <speed>80</speed>
+      <flyOverhead>true</flyOverhead>
+      <soundExplode>TC_Explosion</soundExplode>
+      <soundHitThickRoof>ArtilleryHitThickRoof</soundHitThickRoof>
+      <soundImpactAnticipate>TC_RL_PreImpact</soundImpactAnticipate>
+    </projectile>
+    <comps>
+			<li Class="TurretCollection.CompProperties_ExtraDamage">
+				<ExtraDamageAmount>100</ExtraDamageAmount>
+        <ExtraDamageDef>Bomb</ExtraDamageDef>
+			</li>
+		</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseGun">
+    <defName>TC_Gun_Howitzer</defName>
+    <label>155mm howitzer</label>
+    <description>155mm howitzer</description>
+    <graphicData>
+      <texPath>TC/CH</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <soundInteract>InteractRifle</soundInteract>
+    <canBeSpawningInventory>false</canBeSpawningInventory>
+    <tradeability>Never</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <statBases>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.42</AccuracyShort>
+      <AccuracyMedium>0.31</AccuracyMedium>
+      <AccuracyLong>0.2</AccuracyLong>
+      <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>Artillery</li>
+      <li>Artillery_BaseDestroyer</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>TC_Bullet_Howitzer</projectileDef>
+        <forcedMissRadius>5</forcedMissRadius>
+        <warmupTime>1.5</warmupTime>
+        <minRange>38</minRange>
+        <range>800</range>
+        <soundCast>TC_155mm</soundCast>
+        <muzzleFlashScale>20</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_ResourceBase">
+    <defName>TC_Crate_Howitzer</defName>
+    <label>155mm howitzer</label>
+    <description>155mm howitzer, use this to build howitzer turret.</description>
+    <graphicData>
+      <texPath>TC/Item/WeaponCrate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <MarketValue>13600</MarketValue>
+      <Mass>2350</Mass>
+      <Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>TC_CrateWeapons</li>
+    </thingCategories>
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_ResourceBase">
+    <defName>TC_Shell_Howitzer</defName>
+    <label>155mm howitzer shell</label>
+    <description>An explosive shell to be fired from 155mm howitzer. Explodes when damaged.</description>
+    <graphicData>
+      <texPath>TC/Item/Shell_Howitzer</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <tickerType>Normal</tickerType>
+    <stackLimit>5</stackLimit>
+    <statBases>
+      <MaxHitPoints>70</MaxHitPoints>
+      <MarketValue>170</MarketValue>
+      <WorkToMake>1600</WorkToMake>
+      <Mass>43.13</Mass>
+      <Flammability>1.0</Flammability>
+      <DeteriorationRate>1</DeteriorationRate>
+    </statBases>
+    <costList>
+      <Steel>80</Steel>
+    </costList>
+    <thingCategories>
+      <li>Manufactured</li>
+    </thingCategories>
+    <recipeMaker>
+      <workSpeedStat>SmithingSpeed</workSpeedStat>
+      <workSkill>Crafting</workSkill>
+      <effectWorking>Smith</effectWorking>
+      <soundWorking>Recipe_Machining</soundWorking>
+      <recipeUsers>
+        <li>TableMachining</li>
+      </recipeUsers>
+    </recipeMaker>
+    <comps>
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>5.6</explosiveRadius>
+        <explosiveDamageType>Bomb</explosiveDamageType>
+        <explosiveExpandPerStackcount>0.4</explosiveExpandPerStackcount>
+        <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+        <wickTicks>
+          <min>10</min>
+          <max>30</max>
+        </wickTicks>
+      </li>
+    </comps>
+  </ThingDef>
+
+</Defs>

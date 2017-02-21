@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- ================ Chain Gun Turret ================ -->
+
+  <ThingDef ParentName="TC_BuildingBase">
+    <defName>TC_Turret_ChainGun</defName>
+    <label>chain gun turret</label>
+    <description>A turret mounted with a 35mm chain gun, deals extra armor-piercing damage if the round has a direct hit. Need to be manned.</description>
+    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
+    <graphicData>
+      <texPath>TC/Building/Turret_Heavy</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <damageData>
+        <rect>(0.38,0.2,0.56375,0.8)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <hasInteractionCell>True</hasInteractionCell>
+    <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+    <stealable>false</stealable>
+    <rotatable>true</rotatable>
+    <size>(2,2)</size>
+    <statBases>
+      <MaxHitPoints>550</MaxHitPoints>
+      <Flammability>0.5</Flammability>
+      <WorkToBuild>14000</WorkToBuild>
+      <Beauty>-60</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <comps>
+      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>1000</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable"/>
+      <li Class="CompProperties_Mannable">
+        <manWorkType>Violent</manWorkType>
+      </li>
+      <li Class="CompProperties_Breakdownable"/>
+      <li Class="TurretCollection.CompProperties_TurretTopSize">
+        <topSize>(1.15,1.15,1.15)</topSize>
+      </li>
+    </comps>
+    <passability>PassThroughOnly</passability>
+    <pathCost>50</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <hasTooltip>true</hasTooltip>
+    <stuffCategories>
+      <li>Metallic</li>
+    </stuffCategories>
+    <costStuffCount>400</costStuffCount>
+    <costList>
+      <Steel>400</Steel>
+      <Component>22</Component>
+      <TC_Crate_ChainGun>1</TC_Crate_ChainGun>
+    </costList>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Security</designationCategory>
+    <building>
+      <turretGunDef>TC_Gun_ChainGun</turretGunDef>
+      <turretBurstwarmupTime>0.5</turretBurstwarmupTime>
+      <turretBurstCooldownTime>6.0</turretBurstCooldownTime>
+      <turretTopgraphicPath>TC/Building/TurretTop_ChainGun</turretTopgraphicPath>
+    </building>
+    <researchPrerequisites>
+      <li>TC_HeavyTurret</li>
+    </researchPrerequisites>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseExtraDamageBullet">
+    <defName>TC_Bullet_ChainGun</defName>
+    <label>25mm Round</label>
+    <graphicData>
+      <texPath>TC/Projectile/35mmRound</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <projectile>
+      <damageDef>Bomb</damageDef>
+      <damageAmountBase>10</damageAmountBase>
+      <explosionRadius>1</explosionRadius>
+      <speed>130</speed>
+      <soundExplode>TC_35mmExplosion</soundExplode>
+    </projectile>
+    <comps>
+			<li Class="TurretCollection.CompProperties_ExtraDamage">
+				<ExtraDamageAmount>30</ExtraDamageAmount>
+        <ExtraDamageDef>TC_ArmorPiercing</ExtraDamageDef>
+			</li>
+		</comps>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_BaseGun">
+    <defName>TC_Gun_ChainGun</defName>
+    <label>25mm chain gun</label>
+    <description>25mm chain gun</description>
+    <graphicData>
+      <texPath>TC/CH</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <menuHidden>true</menuHidden>
+    <soundInteract>InteractRifle</soundInteract>
+    <canBeSpawningInventory>false</canBeSpawningInventory>
+    <tradeability>Never</tradeability>
+    <destroyOnDrop>true</destroyOnDrop>
+    <statBases>
+      <AccuracyTouch>0.50</AccuracyTouch>
+      <AccuracyShort>0.35</AccuracyShort>
+      <AccuracyMedium>0.18</AccuracyMedium>
+      <AccuracyLong>0.06</AccuracyLong>
+      <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
+    </statBases>
+    <weaponTags>
+      <li>TurretGun</li>
+    </weaponTags>
+    <verbs>
+      <li>
+        <verbClass>Verb_Shoot</verbClass>
+        <hasStandardCommand>true</hasStandardCommand>
+        <projectileDef>TC_Bullet_ChainGun</projectileDef>
+        <ticksBetweenBurstShots>17</ticksBetweenBurstShots>
+        <burstShotCount>3</burstShotCount>
+        <warmupTime>1.5</warmupTime>
+        <minRange>5</minRange>
+        <range>45</range>
+        <soundCast>TC_35mm_shot</soundCast>
+        <muzzleFlashScale>14</muzzleFlashScale>
+      </li>
+    </verbs>
+  </ThingDef>
+
+  <ThingDef ParentName="TC_ResourceBase">
+    <defName>TC_Crate_ChainGun</defName>
+    <label>25mm chain gun</label>
+    <description>25mm chain gun, use this to build chain gun turret.</description>
+    <graphicData>
+      <texPath>TC/Item/WeaponCrate</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <soundInteract>Metal_Drop</soundInteract>
+    <soundDrop>Standard_Drop</soundDrop>
+    <stackLimit>1</stackLimit>
+    <statBases>
+      <MaxHitPoints>300</MaxHitPoints>
+      <MarketValue>3500</MarketValue>
+      <Mass>119</Mass>
+      <Flammability>0</Flammability>
+			<DeteriorationRate>0</DeteriorationRate>
+		</statBases>
+    <intricate>true</intricate>
+    <thingCategories>
+      <li>TC_CrateWeapons</li>
+    </thingCategories>
+    <tradeTags>
+      <li>Exotic</li>
+    </tradeTags>
+  </ThingDef>
+
+</Defs>

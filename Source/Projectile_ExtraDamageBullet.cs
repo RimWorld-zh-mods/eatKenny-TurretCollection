@@ -1,42 +1,55 @@
 ﻿using UnityEngine;
 using Verse;
+using Verse.Sound;
 using RimWorld;
 namespace TurretCollection
 {
-    public class Projectile_ExtraDamageBullet : Bullet
+    public class Projectile_ExtraDamageBullet : Projectile
     {
+        private Map map;
 
-        public override void SpawnSetup()
+        public override void SpawnSetup(Map map)
         {
-            base.SpawnSetup();
-            MoteMaker.ThrowSmoke(base.Position.ToVector3Shifted(), 3f);
+            base.SpawnSetup(map);
+            this.map = map;
+            MoteMaker.ThrowSmoke(base.Position.ToVector3Shifted(), this.map, 3f);
         }
 
         protected override void Impact(Thing hitThing)
         {
+            base.Impact(hitThing);
             if (hitThing != null)
             {
-                CompExtraDamage_Properties compProperties = this.def.GetCompProperties<CompExtraDamage_Properties>();
-                if (hitThing.def.category == ThingCategory.Pawn)
-                {
-                    MoteMaker.ThrowText(new Vector3((float)this.Position.x + 1f, (float)this.Position.y, (float)this.Position.z + 1f), Translator.Translate("TC_Hit"), Color.yellow);
-                }
-                DamageInfo dinfo = new DamageInfo(compProperties.ExtraDamageDef, compProperties.ExtraDamageAmount, this.launcher, this.ExactRotation.eulerAngles.y, null, this.equipmentDef);
+                DamageInfo dinfo = new DamageInfo(this.def.projectile.damageDef, this.def.projectile.damageAmountBase, this.ExactRotation.eulerAngles.y, this.launcher, null, this.equipmentDef);
                 hitThing.TakeDamage(dinfo);
-                this.Explode();
+                CompExtraDamage compExtraDamage = base.GetComp<CompExtraDamage>();
+                if (compExtraDamage != null)
+                {
+                    CompProperties_ExtraDamage cpExtraDamage = compExtraDamage.Props;
+                    int extraDamagaAmount = cpExtraDamage.ExtraDamageAmount;
+                    DamageDef extraDamagaDef = cpExtraDamage.ExtraDamageDef;
+                    DamageInfo edinfo = new DamageInfo(extraDamagaDef, extraDamagaAmount, this.ExactRotation.eulerAngles.y, this.launcher, null, this.equipmentDef);
+                    if (hitThing.def.category == ThingCategory.Pawn)
+                    {
+                        MoteMaker.ThrowText(new Vector3((float)this.Position.x + 1f, (float)this.Position.y, (float)this.Position.z + 1f), this.map, "TC_Hit".Translate(), Color.yellow);
+                    }
+                    hitThing.TakeDamage(edinfo);
+                }
             }
             else
             {
-                this.Explode();
+                SoundDefOf.BulletImpactGround.PlayOneShot(new TargetInfo(base.Position, this.map, false));
+                MoteMaker.MakeStaticMote(this.ExactPosition, this.map, ThingDefOf.Mote_ShotHit_Dirt, 1f);
             }
+            this.Explode();
         }
 
         protected virtual void Explode()
         {
-            this.Destroy(DestroyMode.Vanish);
+            //this.Destroy(DestroyMode.Vanish);
             ThingDef preExplosionSpawnThingDef = this.def.projectile.preExplosionSpawnThingDef;
             float explosionSpawnChance = this.def.projectile.explosionSpawnChance;
-            GenExplosion.DoExplosion(base.Position, this.def.projectile.explosionRadius, this.def.projectile.damageDef, this.launcher, this.def.projectile.soundExplode, this.def, this.equipmentDef, this.def.projectile.postExplosionSpawnThingDef, this.def.projectile.explosionSpawnChance, 1, false, preExplosionSpawnThingDef, explosionSpawnChance, 1);
+            GenExplosion.DoExplosion(base.Position, this.map, this.def.projectile.explosionRadius, this.def.projectile.damageDef, this.launcher, this.def.projectile.soundExplode, this.def, this.equipmentDef, this.def.projectile.postExplosionSpawnThingDef, this.def.projectile.explosionSpawnChance, 1, false, preExplosionSpawnThingDef, explosionSpawnChance, 1);
         }
     }
 }

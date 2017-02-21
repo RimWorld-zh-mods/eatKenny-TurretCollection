@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DefPackage-TraderKindDef>
+
+  <TraderKindDef>
+    <defName>TC_ArmsDealer</defName>
+    <label>arms dealer</label>
+    <orbital>true</orbital>
+    <stockGenerators>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Silver</thingDef>
+        <countRange>
+          <min>8000</min>
+          <max>32000</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Component</thingDef>
+				<countRange>
+          <min>5</min>
+          <max>50</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_WeaponsRanged">
+        <countRange>
+          <min>16</min>
+          <max>30</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>Medicine</thingDef>
+        <countRange>
+          <min>30</min>
+          <max>50</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>BodyPartOrImplant</tradeTag>
+        <thingDefCountRange>
+          <min>0</min>
+          <max>5</max>
+        </thingDefCountRange>
+        <countRange>
+          <min>1</min>
+          <max>1</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>MortarShell</thingDef>
+        <countRange>
+          <min>30</min>
+          <max>60</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>TC_Shell_IncendiaryGrenade</thingDef>
+        <countRange>
+          <min>30</min>
+          <max>60</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>TC_Shell_Rocket</thingDef>
+        <countRange>
+          <min>10</min>
+          <max>20</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>TC_Shell_Cannon</thingDef>
+        <countRange>
+          <min>20</min>
+          <max>40</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>TC_Shell_Howitzer</thingDef>
+        <countRange>
+          <min>20</min>
+          <max>40</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>TC_Shell_NavalGun28cm</thingDef>
+        <countRange>
+          <min>10</min>
+          <max>20</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_SingleDef">
+        <thingDef>TC_Turret_SmartMine</thingDef>
+        <countRange>
+          <min>10</min>
+          <max>20</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Tag">
+        <tradeTag>HeavyWeapon</tradeTag>
+        <thingDefCountRange>
+          <min>2</min>
+          <max>3</max>
+        </thingDefCountRange>
+        <countRange>
+          <min>-2</min>
+          <max>7</max>
+        </countRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>TC_CrateWeapons</categoryDef>
+        <thingDefCountRange>
+          <min>1</min>
+          <max>10</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>4000</min>
+          <max>24000</max>
+        </totalPriceRange>
+      </li>
+      <li Class="StockGenerator_Category">
+        <categoryDef>Drugs</categoryDef>
+        <thingDefCountRange>
+          <min>5</min>
+          <max>6</max>
+        </thingDefCountRange>
+        <totalPriceRange>
+          <min>4000</min>
+          <max>8000</max>
+        </totalPriceRange>
+      </li>
+      <li Class="StockGenerator_BuyWeirdOrganic" />
+      <li Class="StockGenerator_MultiDef">
+        <thingDefs>
+          <li>Chocolate</li>
+        </thingDefs>
+      </li>
+    </stockGenerators>
+  </TraderKindDef>
+
+</DefPackage-TraderKindDef>

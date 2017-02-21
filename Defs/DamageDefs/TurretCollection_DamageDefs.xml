@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Defs>
   
-  <DamageDef Name="LocalInjuryBase" Abstract="True">
+  <DamageDef Name="TC_LocalInjuryBase" Abstract="True">
     <workerClass>DamageWorker_AddInjury</workerClass>
   </DamageDef>
 
-  <DamageDef ParentName="LocalInjuryBase">
+  <DamageDef ParentName="TC_LocalInjuryBase">
     <defName>TC_ArmorPiercing</defName>
     <label>armor-piercing</label>
     <externalViolence>true</externalViolence>
@@ -16,7 +16,7 @@
     <impactSoundType>Bullet</impactSoundType>
   </DamageDef>
 
-  <DamageDef ParentName="LocalInjuryBase">
+  <DamageDef ParentName="TC_LocalInjuryBase">
     <defName>TC_EletricalBurn</defName>
     <workerClass>DamageWorker_Flame</workerClass>
     <label>eletrical burn</label>
@@ -27,6 +27,5 @@
     <hediff>Burn</hediff>
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
   </DamageDef>
-  
 
 </Defs>

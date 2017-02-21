@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ThingCategoryDefs>
+
+  <ThingCategoryDef>
+    <defName>TC_HeavyWeapons</defName>
+    <label>heavy weapons</label>
+    <parent>Weapons</parent>
+  </ThingCategoryDef>
+
+  <ThingCategoryDef>
+    <defName>TC_CrateWeapons</defName>
+    <label>crate weapons</label>
+    <parent>Weapons</parent>
+  </ThingCategoryDef>
+
+</ThingCategoryDefs>

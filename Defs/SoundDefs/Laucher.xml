@@ -1,15 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DefPackage-SoundDef>
+
   <SoundDef>
-    <defName>130mmRocket</defName>
+    <defName>TC_130mmRocket</defName>
+    <context>MapOnly</context>
     <eventNames />
-           <maxVoices>4</maxVoices>
-           <maxSimultaneous>1</maxSimultaneous>
+    <maxVoices>4</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>RocketLauncher/130mmRocket</clipPath>
+            <clipPath>TC/RocketLauncher/130mmRocket</clipPath>
           </li>
         </grains>
         <volumeRange>
@@ -25,15 +27,16 @@
   </SoundDef>
 
   <SoundDef>
-    <defName>IL</defName>
+    <defName>TC_IL</defName>
+    <context>MapOnly</context>
     <eventNames />
-           <maxVoices>4</maxVoices>
-           <maxSimultaneous>1</maxSimultaneous>
+    <maxVoices>4</maxVoices>
+    <maxSimultaneous>1</maxSimultaneous>
     <subSounds>
       <li>
         <grains>
           <li Class="AudioGrain_Clip">
-            <clipPath>IncendiaryLauncher/IL</clipPath>
+            <clipPath>TC/IncendiaryLauncher/IL</clipPath>
           </li>
         </grains>
         <volumeRange>
@@ -47,4 +50,5 @@
       </li>
     </subSounds>
   </SoundDef>
+
 </DefPackage-SoundDef>
