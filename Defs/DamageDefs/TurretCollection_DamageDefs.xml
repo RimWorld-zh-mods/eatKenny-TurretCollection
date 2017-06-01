@@ -9,11 +9,11 @@
     <defName>TC_ArmorPiercing</defName>
     <label>armor-piercing</label>
     <externalViolence>true</externalViolence>
-    <battleWound>true</battleWound>
     <deathMessage>{0} has been shot to death.</deathMessage>
     <hediff>Gunshot</hediff>
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
     <impactSoundType>Bullet</impactSoundType>
+    <armorCategory>Sharp</armorCategory>
   </DamageDef>
 
   <DamageDef ParentName="TC_LocalInjuryBase">
@@ -26,6 +26,8 @@
     <deathMessage>{0} has been electrified to death.</deathMessage>
     <hediff>Burn</hediff>
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>
+		<impactSoundType>Electric</impactSoundType>
+    <armorCategory>Electric</armorCategory>
   </DamageDef>
 
 </Defs>

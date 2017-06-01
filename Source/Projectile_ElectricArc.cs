@@ -61,12 +61,12 @@ namespace TurretCollection
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.LookValue<int>(ref tickCounter, "tickCounter", 0);
+            Scribe_Values.Look<int>(ref tickCounter, "tickCounter", 0);
         }
 
-        public override void SpawnSetup(Map map)
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            base.SpawnSetup(map);
+            base.SpawnSetup(map, respawningAfterLoad);
             this.map = map;
             MoteMaker.ThrowLightningGlow(base.Position.ToVector3Shifted(), this.map, 1.5f);
         }

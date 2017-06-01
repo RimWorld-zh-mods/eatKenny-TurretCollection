@@ -130,6 +130,9 @@
         <range>45</range>
         <soundCast>TC_35mm_shot</soundCast>
         <muzzleFlashScale>14</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
       </li>
     </verbs>
   </ThingDef>

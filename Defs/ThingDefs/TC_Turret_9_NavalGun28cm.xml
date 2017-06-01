@@ -139,6 +139,9 @@
         <range>800</range>
         <soundCast>TC_280mm</soundCast>
         <muzzleFlashScale>20</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
       </li>
     </verbs>
   </ThingDef>

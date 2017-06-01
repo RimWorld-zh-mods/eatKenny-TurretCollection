@@ -141,6 +141,9 @@
         <ticksBetweenBurstShots>10</ticksBetweenBurstShots>
         <soundCast>TC_130mmRocket</soundCast>
         <muzzleFlashScale>20</muzzleFlashScale>
+        <targetParams>
+          <canTargetLocations>true</canTargetLocations>
+        </targetParams>
       </li>
     </verbs>
   </ThingDef>

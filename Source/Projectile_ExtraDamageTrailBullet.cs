@@ -10,9 +10,9 @@ namespace TurretCollection
 
         private Map map;
 
-        public override void SpawnSetup(Map map)
+        public override void SpawnSetup(Map map, bool respawningAfterLoad)
         {
-            base.SpawnSetup(map);
+            base.SpawnSetup(map, respawningAfterLoad);
             this.map = map;
             MoteMaker.ThrowSmoke(base.Position.ToVector3Shifted(), this.map, 3f);
         }
