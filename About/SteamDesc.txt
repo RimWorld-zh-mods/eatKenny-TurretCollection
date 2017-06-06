@@ -1,70 +1,66 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<ModMetaData>
-	<name>Turret Collection</name>
-	<author>eatKenny, duduluu</author>
-	<url>https://ludeon.com/forums/index.php?topic=30720.0</url>
-	<targetVersion>0.17.1557</targetVersion>
-	<description>Adds manned machine gun turrets and different types of advanced turrets.
+Adds manned machine gun turrets and different types of advanced turrets.
 
 Original Author: eatKenny
 Current Maintainer: duduluu
 
-&lt;color=#8c9eff&gt;&lt;b&gt;Compatible with existing save and other mods, enjoy it.&lt;/b&gt;&lt;/color&gt;
+[h1][b]Compatible with existing save and other mods, enjoy it.[/b][/h1]
 
-## Features
+[h1]Features[/h1]
 
-**M2 Browning machine gun**  
+[b]M2 Browning machine gun[/b]  
 A manned M2 browning machine gun.  
 Make at machining table.  
 
-**Incendiary grenade launcher**  
+[b]Incendiary grenade launcher[/b]  
 Incendiary grenade launcher fires 4 incendiary grenades at target area with each volley. Fires over walll, need to be manned.  
 Ammo: Incendiary grenades (Make at machining table.)  
 Make at machining table.  
 
-**Anti-materiel turret**  
+[b]Anti-materiel turret[/b]  
 A turret mounted with a .50 Cal anti-materiel gun that automatically fires at enemies.  
 Build Cost: Turret .50 cal anti-materiel gun (Make at machining table.)  
 
-**Rocket launcher**  
+[b]Rocket launcher[/b]  
 Rocket launcher fires 6 rockets at target area with each volley. Fires over wall, need to be manned.  
 Ammo: 132mm rockets (Make at machining table.)  
 
-**Cannon turret**  
+[b]Cannon turret[/b]  
 A turret mounted with a 120mm cannon gun on tanks. deals extra armor-piercing damage if the round has a direct hit.  
 Ammo: 120mm cannon shell (Make at machining table.)  
 Build Cost: 120mm cannon gun (Get via buying only.)  
 
-**Howitzer turret**  
+[b]Howitzer turret[/b]  
 A turret mounted with a 155mm howitzer. Fires over wall, need to be manned.  
 Ammo: 155mm howitzer shell (Make at machining table.)  
 Build Cost: 155mm howitzer (Get via buying only.)  
 
-**Chain gun turret**  
+[b]Chain gun turret[/b]  
 A turret mounted with a 25mm chain gun, deals extra armor-piercing damage if the round has a direct hit. Need to be manned.    
 Build Cost: 25mm chain gun (Get via buying only.)  
 
-**40mm naval gun turret**  
+[b]40mm naval gun turret[/b]  
 An 40mm naval gun turret that rapidly fires at enemies, deals extra armor-piercing damage if the round has a direct hit. Need to be manned.  
 Build Cost: 40mm naval gun (Get via buying only.)  
 
-**28cm naval gun turret**  
+[b]28cm naval gun turret[/b]  
 The ancient German 28cm naval gun was a 283 mm caliber gun designed in 1934 used on the Scharnhorst class battleships. It fires HE shells at long distance, deals devastating damage in large area. Fires over wall, need to be manned.  
 Ammo: 28cm naval gun shell (Make at machining table.)  
 Build Cost: 28cm naval gun (Get via buying only.)  
 
-**Tesla turret**  
+[b]Tesla turret[/b]  
 The tesla turret is a short range defense turret, it uses a combination of electricity generation and atmosphere ionization to hurl artificial lightning bolts at hostile attackers.  
 Build Cost: Tesla coil (Make at machining table.)  
 
-**Smart mine**  
+[b]Smart mine[/b]  
 A smart anti-personnel mine, launch itself to the enemy within a small radius and explode.  
 Make at machining table.  
 
+[b]Orbital arms dealer[/b]
+For balanced, to build most of these turret, you must buy the corresponding guns from this trader ship.
 
-## Licens
+[h1][b]License[/b][/h1]
+ - Source code: MIT License https://opensource.org/licenses/MIT
+ - Artwork: CC BY-SA 4.0 http://creativecommons.org/licenses/by-sa/4.0/
 
-**Source code**: [MIT License](https://opensource.org/licenses/MIT)
-**Artwork**: [Creative Commons License Attribution-ShareAlike 4.0 International](http://creativecommons.org/licenses/by-sa/4.0/)
-</description>
-</ModMetaData>
+[h1][b]Non-steam and old version download[/b][/h1]
+https://github.com/RimWorld-zh/eatKenny-TurretCollection/releases

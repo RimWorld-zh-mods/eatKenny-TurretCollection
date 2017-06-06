@@ -1,64 +1,73 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ResearchProjectDefs>
 
-	<ResearchProjectDef>
-		<defName>TC_SmartMine</defName>
-		<label>TC: Smart mine</label>
-		<description>Allows you to make smart mines.</description>
-		<baseCost>800</baseCost>
-		<techLevel>Industrial</techLevel>
-		<prerequisites>
-			<li>GunTurrets</li>
-		</prerequisites>
-		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<researchViewX>8</researchViewX>
-		<researchViewY>4.5</researchViewY>
-	</ResearchProjectDef>
+  <ResearchTabDef>
+    <defName>TC_ResearchTab</defName>
+    <label>TC</label>
+  </ResearchTabDef>
 
-	<ResearchProjectDef>
-		<defName>TC_AMTurret</defName>
-		<label>TC: Anti-materiel turret</label>
-		<description>Allows you to build automated anti-materiel turrets.</description>
-		<baseCost>3000</baseCost>
-		<techLevel>Industrial</techLevel>
-		<prerequisites>
-			<li>GunTurrets</li>
-		</prerequisites>
-		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<researchViewX>10</researchViewX>
-		<researchViewY>5</researchViewY>
-	</ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>TC_AMTurret</defName>
+    <label>TC: Anti-materiel turret</label>
+    <description>Allows you to build automated anti-materiel turrets.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>GunTurrets</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <tab>TC_ResearchTab</tab>
+    <researchViewX>0</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
 
-	<ResearchProjectDef>
-		<defName>TC_HeavyTurret</defName>
-		<label>TC: Heavy turret</label>
-		<description>Allows you to build more strength heavy turrets.</description>
-		<baseCost>3000</baseCost>
-		<techLevel>Industrial</techLevel>
-		<prerequisites>
-			<li>GunTurrets</li>
-		</prerequisites>
-		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<researchViewX>11</researchViewX>
-		<researchViewY>5</researchViewY>
-	</ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>TC_HeavyTurret</defName>
+    <label>TC: Heavy turret</label>
+    <description>Allows you to build more strength heavy turrets.</description>
+    <baseCost>3000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>GunTurrets</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <tab>TC_ResearchTab</tab>
+    <researchViewX>1</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
 
-	<ResearchProjectDef>
-		<defName>TC_TeslaTurret</defName>
-		<label>TC: Tesla turret</label>
-		<description>Allows you to build automated tesla turrets.</description>
-		<baseCost>5000</baseCost>
-		<techLevel>Industrial</techLevel>
-		<prerequisites>
-			<li>GunTurrets</li>
-			<li>MultiAnalyzer</li>
-		</prerequisites>
-		<requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
-		<requiredResearchFacilities>
-			<li>MultiAnalyzer</li>
-		</requiredResearchFacilities>
-		<researchViewX>12</researchViewX>
-		<researchViewY>5</researchViewY>
-	</ResearchProjectDef>
+  <ResearchProjectDef>
+    <defName>TC_TeslaTurret</defName>
+    <label>TC: Tesla turret</label>
+    <description>Allows you to build automated tesla turrets.</description>
+    <baseCost>5000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>GunTurrets</li>
+      <li>MultiAnalyzer</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <requiredResearchFacilities>
+      <li>MultiAnalyzer</li>
+    </requiredResearchFacilities>
+    <tab>TC_ResearchTab</tab>
+    <researchViewX>2</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
+
+  <ResearchProjectDef>
+    <defName>TC_SmartMine</defName>
+    <label>TC: Smart mine</label>
+    <description>Allows you to make smart mines.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>GunTurrets</li>
+    </prerequisites>
+    <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
+    <tab>TC_ResearchTab</tab>
+    <researchViewX>3</researchViewX>
+    <researchViewY>0</researchViewY>
+  </ResearchProjectDef>
 
 </ResearchProjectDefs>
