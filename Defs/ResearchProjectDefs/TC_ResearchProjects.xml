@@ -66,8 +66,8 @@
     </prerequisites>
     <requiredResearchBuilding>HiTechResearchBench</requiredResearchBuilding>
     <tab>TC_ResearchTab</tab>
-    <researchViewX>3</researchViewX>
-    <researchViewY>0</researchViewY>
+    <researchViewX>0</researchViewX>
+    <researchViewY>2</researchViewY>
   </ResearchProjectDef>
 
 </ResearchProjectDefs>

@@ -64,7 +64,7 @@
     <building>
       <turretGunDef>TC_Gun_NavalGun40mm</turretGunDef>
       <turretBurstwarmupTime>0.5</turretBurstwarmupTime>
-      <turretBurstCooldownTime>0.1</turretBurstCooldownTime>
+      <turretBurstCooldownTime>1</turretBurstCooldownTime>
       <turretTopgraphicPath>TC/Building/TurretTop_NavalGun40mm</turretTopgraphicPath>
     </building>
     <researchPrerequisites>
