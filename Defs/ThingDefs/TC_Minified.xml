@@ -2,20 +2,21 @@
 <Defs>
 
   <ThingDef Name="TC_MinifiedBase" Abstract="True">
+    <pathCost>15</pathCost>
+    <altitudeLayer>Item</altitudeLayer>
     <thingClass>MinifiedThing</thingClass>
     <category>Item</category>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
     <useHitPoints>true</useHitPoints>
-    <selectable>true</selectable>
-    <altitudeLayer>Item</altitudeLayer>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
     <scatterableOnMapGen>false</scatterableOnMapGen>
     <!-- for CompForbiddable -->
     <drawerType>RealtimeOnly</drawerType>
-    <comps>
-      <li Class="CompProperties_Forbiddable"/>
-    </comps>
+    <selectable>true</selectable>
     <alwaysHaulable>true</alwaysHaulable>
-    <rotatable>false</rotatable>
-    <pathCost>15</pathCost>
   </ThingDef>
 
   <ThingDef ParentName="TC_MinifiedBase">
