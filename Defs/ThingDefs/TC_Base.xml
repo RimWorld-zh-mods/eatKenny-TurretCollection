@@ -2,48 +2,41 @@
 <Defs>
 
   <ThingDef Name="TC_ResourceBase" Abstract="True">
-    <thingClass>ThingWithComps</thingClass>
-    <category>Item</category>
-    <resourceReadoutPriority>Middle</resourceReadoutPriority>
-    <useHitPoints>true</useHitPoints>
-    <selectable>true</selectable>
-    <altitudeLayer>Item</altitudeLayer>
-    <stackLimit>75</stackLimit>
     <statBases>
       <Beauty>-7</Beauty>
     </statBases>
-    <comps>
-      <li Class="CompProperties_Forbiddable"/>
-    </comps>
-    <alwaysHaulable>true</alwaysHaulable>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <rotatable>false</rotatable>
     <pathCost>15</pathCost>
+    <altitudeLayer>Item</altitudeLayer>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <stackLimit>75</stackLimit>
+    <rotatable>false</rotatable>
+    <useHitPoints>true</useHitPoints>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+    <selectable>true</selectable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <resourceReadoutPriority>Middle</resourceReadoutPriority>
+    <alwaysHaulable>true</alwaysHaulable>
   </ThingDef>
 
   <ThingDef Name="TC_BuildingBase" Abstract="True">
-    <category>Building</category>
-    <thingClass>Building</thingClass>
-    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
-    <selectable>true</selectable>
-    <drawerType>MapMeshAndRealTime</drawerType>
+    <statBases>
+      <SellPriceFactor>0.70</SellPriceFactor>
+    </statBases>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <repairEffect>Repair</repairEffect>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <filthLeaving>BuildingRubble</filthLeaving>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <selectable>true</selectable>
+    <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
   </ThingDef>
 
   <ThingDef Abstract="True" Name="TC_BaseWeapon">
-    <thingClass>ThingWithComps</thingClass>
-    <category>Item</category>
-    <drawGUIOverlay>true</drawGUIOverlay>
-    <altitudeLayer>Item</altitudeLayer>
-    <alwaysHaulable>true</alwaysHaulable>
-    <tickerType>Never</tickerType>
-    <equipmentType>Primary</equipmentType>
-    <useHitPoints>true</useHitPoints>
-    <pathCost>10</pathCost>
-    <selectable>true</selectable>
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1.0</Flammability>
@@ -51,8 +44,14 @@
       <Beauty>-6</Beauty>
       <SellPriceFactor>0.20</SellPriceFactor>
     </statBases>
+    <pathCost>10</pathCost>
+    <altitudeLayer>Item</altitudeLayer>
+    <thingClass>ThingWithComps</thingClass>
+    <category>Item</category>
+    <tickerType>Never</tickerType>
+    <useHitPoints>true</useHitPoints>
     <comps>
-      <li Class="CompProperties_Forbiddable"/>
+      <li Class="CompProperties_Forbiddable" />
       <li>
         <compClass>CompEquippable</compClass>
       </li>
@@ -60,17 +59,13 @@
     <graphicData>
       <onGroundRandomRotateAngle>35</onGroundRandomRotateAngle>
     </graphicData>
+    <selectable>true</selectable>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <alwaysHaulable>true</alwaysHaulable>
+    <equipmentType>Primary</equipmentType>
   </ThingDef>
 
   <ThingDef Name="TC_BaseGun" Abstract="True" ParentName="TC_BaseWeapon">
-    <techLevel>Industrial</techLevel>
-    <smeltable>true</smeltable>
-    <thingCategories>
-      <li>WeaponsRanged</li>
-    </thingCategories>
-    <inspectorTabs>
-      <li>ITab_Art</li>
-    </inspectorTabs>
     <comps>
       <li>
         <compClass>CompQuality</compClass>
@@ -81,58 +76,48 @@
         <minQualityForArtistic>Excellent</minQualityForArtistic>
       </li>
     </comps>
+    <smeltable>true</smeltable>
+    <inspectorTabs>
+      <li>ITab_Art</li>
+    </inspectorTabs>
+    <thingCategories>
+      <li>WeaponsRanged</li>
+    </thingCategories>
+    <techLevel>Industrial</techLevel>
   </ThingDef>
 
   <ThingDef Name="TC_BaseBullet" Abstract="True">
-    <category>Projectile</category>
-    <tickerType>Normal</tickerType>
+    <label>bullet</label>
     <altitudeLayer>Projectile</altitudeLayer>
     <thingClass>Bullet</thingClass>
-    <label>bullet</label>
+    <category>Projectile</category>
+    <tickerType>Normal</tickerType>
     <useHitPoints>False</useHitPoints>
-    <neverMultiSelect>True</neverMultiSelect>
     <graphicData>
       <shaderType>Transparent</shaderType>
     </graphicData>
+    <neverMultiSelect>True</neverMultiSelect>
   </ThingDef>
 
-  <ThingDef Name="TC_BaseExtraDamageBullet" Abstract="True">
-    <category>Projectile</category>
-    <tickerType>Normal</tickerType>
-    <altitudeLayer>Projectile</altitudeLayer>
+  <ThingDef Name="TC_BaseExtraDamageBullet" ParentName="TC_BaseBullet" Abstract="True">
     <thingClass>TurretCollection.Projectile_ExtraDamageBullet</thingClass>
-    <label>bullet</label>
-    <useHitPoints>False</useHitPoints>
-    <neverMultiSelect>True</neverMultiSelect>
-    <graphicData>
-      <shaderType>Transparent</shaderType>
-    </graphicData>
   </ThingDef>
 
-  <ThingDef Name="TC_BaseExtraDamageTrailBullet" Abstract="True">
-    <category>Projectile</category>
-    <tickerType>Normal</tickerType>
-    <altitudeLayer>Projectile</altitudeLayer>
+  <ThingDef Name="TC_BaseExtraDamageTrailBullet" ParentName="TC_BaseBullet" Abstract="True">
     <thingClass>TurretCollection.Projectile_ExtraDamageTrailBullet</thingClass>
-    <label>bullet</label>
-    <useHitPoints>False</useHitPoints>
-    <neverMultiSelect>True</neverMultiSelect>
-    <graphicData>
-      <shaderType>Transparent</shaderType>
-    </graphicData>
   </ThingDef>
 
 	<ThingDef Name="TC_BaseGrenadeProjectile" Abstract="True">
-    <category>Projectile</category>
+    <label>projectile</label>
     <altitudeLayer>Projectile</altitudeLayer>
     <thingClass>Projectile_Explosive</thingClass>
-    <label>projectile</label>
+    <category>Projectile</category>
     <tickerType>Normal</tickerType>
     <useHitPoints>False</useHitPoints>
-    <neverMultiSelect>True</neverMultiSelect>
     <graphicData>
       <shaderType>Transparent</shaderType>
     </graphicData>
+    <neverMultiSelect>True</neverMultiSelect>
     <projectile>
       <speed>12</speed>
       <flyOverhead>false</flyOverhead>
