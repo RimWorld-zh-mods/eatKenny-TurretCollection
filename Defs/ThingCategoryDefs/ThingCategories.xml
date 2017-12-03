@@ -13,4 +13,10 @@
     <parent>Weapons</parent>
   </ThingCategoryDef>
 
+  <ThingCategoryDef>
+    <defName>TC_Shells</defName>
+    <label>turret shells</label>
+    <parent>Manufactured</parent>
+  </ThingCategoryDef>
+
 </Defs>

@@ -44,20 +44,24 @@
           <max>1</max>
         </countRange>
       </li>
-      <li Class="StockGenerator_SingleDef">
-        <thingDef>MortarShell</thingDef>
+      <li Class="StockGenerator_Tag" ListIndex="3">
         <countRange>
-          <min>30</min>
-          <max>60</max>
+          <min>20</min>
+          <max>40</max>
         </countRange>
+        <tradeTag>MortarShell</tradeTag>
+        <thingDefCountRange>
+          <min>1</min>
+          <max>2</max>
+        </thingDefCountRange>
       </li>
-      <li Class="StockGenerator_SingleDef">
+      <!-- <li Class="StockGenerator_SingleDef">
         <thingDef>TC_Shell_IncendiaryGrenade</thingDef>
         <countRange>
           <min>30</min>
           <max>60</max>
         </countRange>
-      </li>
+      </li> -->
       <li Class="StockGenerator_SingleDef">
         <thingDef>TC_Shell_Rocket</thingDef>
         <countRange>

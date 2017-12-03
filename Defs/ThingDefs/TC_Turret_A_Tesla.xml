@@ -7,7 +7,7 @@
     <defName>TC_Turret_Tesla</defName>
     <label>tesla turret</label>
     <description>The tesla turret is a short range defense turret, it uses a combination of electricity generation and atmosphere ionization to hurl artificial lightning bolts at hostile attackers.</description>
-    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
+    <thingClass>TurretCollection.Building_TurretGunCustom</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_Tesla</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -41,6 +41,7 @@
       <li Class="TurretCollection.CompProperties_TurretTopSize">
         <topSize>(1.6,1.6,1.6)</topSize>
       </li>
+      <li Class="TurretCollection.CompProperties_TurretRemoteContol" />
     </comps>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
@@ -61,7 +62,7 @@
       <turretGunDef>TC_Gun_Tesla</turretGunDef>
       <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
       <turretBurstCooldownTime>10</turretBurstCooldownTime>
-      <turretTopgraphicPath>TC/Building/TurretTop_Tesla</turretTopgraphicPath>
+      <turretTopGraphicPath>TC/Building/TurretTop_Tesla</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
@@ -74,15 +75,25 @@
   <ThingDef ParentName="TC_BaseBullet">
     <defName>TC_Bullet_Tesla</defName>
     <label>electric arc</label>
-    <thingClass>TurretCollection.Projectile_ElectricArc</thingClass>
+    <thingClass>TurretCollection.Projectile_Line</thingClass>
     <graphicData>
-      <texPath>TC/Projectile/TeslaCoilPlasma</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <!-- <texPath>TC/Projectile/TeslaCoilPlasma</texPath> -->
+      <!-- <graphicClass>Graphic_Single</graphicClass> -->
+      <texPath>TC/Projectile/Lighting</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+      <!-- <graphicClass>Graphic_Mote</graphicClass> -->
+      <!-- <shaderType>MoteGlow</shaderType> -->
     </graphicData>
     <projectile>
+      <speed>200</speed>
       <damageDef>TC_EletricalBurn</damageDef>
       <damageAmountBase>4</damageAmountBase>
     </projectile>
+    <comps>
+      <li Class="TurretCollection.CompProperties_ProjectileLineImpact">
+        <stunTarget>true</stunTarget>
+      </li>
+    </comps>
   </ThingDef>
 
   <ThingDef ParentName="TC_BaseGun">
@@ -105,20 +116,22 @@
       <AccuracyLong>1.00</AccuracyLong>
       <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
     </statBases>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
+      <li>Gun</li>
       <li>TurretGun</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>TC_Bullet_Tesla</projectileDef>
+        <defaultProjectile>TC_Bullet_Tesla</defaultProjectile>
         <ticksBetweenBurstShots>6</ticksBetweenBurstShots>
         <burstShotCount>10</burstShotCount>
-        <AccuracyTouch>1.00</AccuracyTouch>
-        <AccuracyShort>1.00</AccuracyShort>
-        <AccuracyMedium>1.00</AccuracyMedium>
-        <AccuracyLong>1.00</AccuracyLong>
+        <accuracyTouch>1.00</accuracyTouch>
+        <accuracyShort>1.00</accuracyShort>
+        <accuracyMedium>1.00</accuracyMedium>
+        <accuracyLong>1.00</accuracyLong>
         <warmupTime>10</warmupTime>
         <range>12</range>
         <soundCast>TC_TeslaCoil</soundCast>
@@ -126,6 +139,8 @@
       </li>
     </verbs>
   </ThingDef>
+
+  <!-- ======== Crate ======== -->
 
   <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Crate_Tesla</defName>

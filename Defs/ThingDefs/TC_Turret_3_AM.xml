@@ -3,11 +3,10 @@
 
   <!-- ================ Anti-materiel Turret ================ -->
 
-  <ThingDef ParentName="TC_BuildingBase">
+  <ThingDef ParentName="TC_BaseTurretCustom">
     <defName>TC_Turret_AM</defName>
     <label>anti-materiel turret</label>
     <description>A turret mounted with a .50 Cal anti-materiel gun that automatically fires at enemies.</description>
-    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_Heavy</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -41,6 +40,7 @@
       <li Class="TurretCollection.CompProperties_TurretTopSize">
         <topSize>(1.15,1.15,1.15)</topSize>
       </li>
+      <li Class="TurretCollection.CompProperties_TurretRemoteContol" />
     </comps>
     <passability>PassThroughOnly</passability>
     <pathCost>50</pathCost>
@@ -64,14 +64,14 @@
       <turretGunDef>TC_Gun_AM</turretGunDef>
       <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
       <turretBurstCooldownTime>4.5</turretBurstCooldownTime>
-      <turretTopgraphicPath>TC/Building/TurretTop_AM</turretTopgraphicPath>
+      <turretTopGraphicPath>TC/Building/TurretTop_AM</turretTopGraphicPath>
     </building>
     <researchPrerequisites>
       <li>TC_AMTurret</li>
     </researchPrerequisites>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseBullet">
+  <ThingDef ParentName="TC_BaseProjectileCustom">
     <defName>TC_Bullet_AM</defName>
     <label>.50 BMG</label>
     <graphicData>
@@ -80,12 +80,18 @@
     </graphicData>
     <projectile>
       <damageDef>Bullet</damageDef>
-      <damageAmountBase>40</damageAmountBase>
+      <damageAmountBase>30</damageAmountBase>
       <speed>120</speed>
     </projectile>
+    <comps>
+      <li Class="TurretCollection.CompProperties_ProjectileExtraDamage">
+        <damageAmountBase>15</damageAmountBase>
+        <damageDef>TC_ArmorPiercing</damageDef>
+      </li>
+    </comps>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseGun">
+  <ThingDef ParentName="TC_BaseWeapon">
     <defName>TC_Gun_AM</defName>
     <label>turret .50 cal anti-materiel gun</label>
     <description>turret .50 cal turret anti-materiel gun</description>
@@ -105,14 +111,16 @@
       <AccuracyLong>1.00</AccuracyLong>
       <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
     </statBases>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
+      <li>Gun</li>
       <li>TurretGun</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>TC_Bullet_AM</projectileDef>
+        <defaultProjectile>TC_Bullet_AM</defaultProjectile>
         <warmupTime>1.5</warmupTime>
         <range>51</range>
         <soundCast>TC_50Cal</soundCast>
@@ -121,6 +129,8 @@
       </li>
     </verbs>
   </ThingDef>
+
+  <!-- ======== Crate ======== -->
 
   <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Crate_AM</defName>

@@ -18,11 +18,11 @@
 
   <DamageDef ParentName="TC_LocalInjuryBase">
     <defName>TC_EletricalBurn</defName>
-    <workerClass>DamageWorker_Flame</workerClass>
     <label>eletrical burn</label>
-    <hasForcefulImpact>false</hasForcefulImpact>
-    <makesBlood>false</makesBlood>
+    <workerClass>DamageWorker_Flame</workerClass>
     <externalViolence>true</externalViolence>
+    <harmsHealth>false</harmsHealth>
+    <makesBlood>false</makesBlood>
     <deathMessage>{0} has been electrified to death.</deathMessage>
     <hediff>Burn</hediff>
     <harmAllLayersUntilOutside>true</harmAllLayersUntilOutside>

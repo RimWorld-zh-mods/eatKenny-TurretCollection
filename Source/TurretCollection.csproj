@@ -47,16 +47,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Building_TurretGunCustomTop.cs" />
-    <Compile Include="CompProperties_TurretTopSize.cs" />
+    <Compile Include="Building_TurretGunCustom.cs" />
+    <Compile Include="CompProjectileLineImpact.cs" />
+    <Compile Include="CompProjectileSmoke.cs" />
+    <Compile Include="CompTurretRemoteControl.cs" />
+    <Compile Include="CompTurretDestroySelfAfterFire.cs" />
     <Compile Include="CompTurretTopSize.cs" />
-    <Compile Include="Projectile_ElectricArc.cs" />
-    <Compile Include="TurretTopCustomSize.cs" />
-    <Compile Include="Building_SmartMine.cs" />
-    <Compile Include="CompExtraDamage.cs" />
-    <Compile Include="CompProperties_ExtraDamage.cs" />
-    <Compile Include="Projectile_ExtraDamageTrailBullet.cs" />
-    <Compile Include="Projectile_ExtraDamageBullet.cs" />
+    <Compile Include="Projectile_Line.cs" />
+    <Compile Include="TurretTop_CustomSize.cs" />
+    <Compile Include="CompProjectileExtraDamage.cs" />
+    <Compile Include="Projectile_Custom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

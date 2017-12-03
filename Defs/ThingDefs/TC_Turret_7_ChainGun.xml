@@ -7,7 +7,7 @@
     <defName>TC_Turret_ChainGun</defName>
     <label>chain gun turret</label>
     <description>A turret mounted with a 25mm chain gun, deals extra armor-piercing damage if the round has a direct hit. Need to be manned.</description>
-    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
+    <thingClass>TurretCollection.Building_TurretGunCustom</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_Heavy</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -64,16 +64,16 @@
     <designationCategory>Security</designationCategory>
     <building>
       <turretGunDef>TC_Gun_ChainGun</turretGunDef>
-      <turretBurstwarmupTime>0.5</turretBurstwarmupTime>
+      <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
       <turretBurstCooldownTime>6.0</turretBurstCooldownTime>
-      <turretTopgraphicPath>TC/Building/TurretTop_ChainGun</turretTopgraphicPath>
+      <turretTopGraphicPath>TC/Building/TurretTop_ChainGun</turretTopGraphicPath>
     </building>
     <researchPrerequisites>
       <li>TC_HeavyTurret</li>
     </researchPrerequisites>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseExtraDamageBullet">
+  <ThingDef ParentName="TC_BaseProjectileCustom">
     <defName>TC_Bullet_ChainGun</defName>
     <label>25mm Round</label>
     <graphicData>
@@ -88,9 +88,9 @@
       <soundExplode>TC_35mmExplosion</soundExplode>
     </projectile>
     <comps>
-			<li Class="TurretCollection.CompProperties_ExtraDamage">
-				<ExtraDamageAmount>30</ExtraDamageAmount>
-        <ExtraDamageDef>TC_ArmorPiercing</ExtraDamageDef>
+			<li Class="TurretCollection.CompProperties_ProjectileExtraDamage">
+        <damageAmountBase>30</damageAmountBase>
+        <damageDef>TC_ArmorPiercing</damageDef>
 			</li>
 		</comps>
   </ThingDef>
@@ -115,14 +115,16 @@
       <AccuracyLong>0.06</AccuracyLong>
       <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
     </statBases>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
+      <li>Gun</li>
       <li>TurretGun</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>TC_Bullet_ChainGun</projectileDef>
+        <defaultProjectile>TC_Bullet_ChainGun</defaultProjectile>
         <ticksBetweenBurstShots>17</ticksBetweenBurstShots>
         <burstShotCount>3</burstShotCount>
         <warmupTime>1.5</warmupTime>
@@ -136,6 +138,8 @@
       </li>
     </verbs>
   </ThingDef>
+
+  <!-- ======== Crate ======== -->
 
   <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Crate_ChainGun</defName>

@@ -36,7 +36,7 @@
     <soundImpactDefault>BulletImpactMetal</soundImpactDefault>
   </ThingDef>
 
-  <ThingDef Abstract="True" Name="TC_BaseWeapon">
+  <ThingDef Name="TC_BaseWeapon" Abstract="True">
     <statBases>
       <MaxHitPoints>100</MaxHitPoints>
       <Flammability>1.0</Flammability>
@@ -99,14 +99,6 @@
     <neverMultiSelect>True</neverMultiSelect>
   </ThingDef>
 
-  <ThingDef Name="TC_BaseExtraDamageBullet" ParentName="TC_BaseBullet" Abstract="True">
-    <thingClass>TurretCollection.Projectile_ExtraDamageBullet</thingClass>
-  </ThingDef>
-
-  <ThingDef Name="TC_BaseExtraDamageTrailBullet" ParentName="TC_BaseBullet" Abstract="True">
-    <thingClass>TurretCollection.Projectile_ExtraDamageTrailBullet</thingClass>
-  </ThingDef>
-
 	<ThingDef Name="TC_BaseGrenadeProjectile" Abstract="True">
     <label>projectile</label>
     <altitudeLayer>Projectile</altitudeLayer>
@@ -122,6 +114,16 @@
       <speed>12</speed>
       <flyOverhead>false</flyOverhead>
     </projectile>
+  </ThingDef>
+
+  <!-- Turret Collection -->
+  <ThingDef Name="TC_BaseTurretCustom"  Abstract="True" ParentName="TC_BuildingBase">
+    <thingClass>TurretCollection.Building_TurretGunCustom</thingClass>
+  </ThingDef>
+
+  <!-- Turret Collection -->
+  <ThingDef Name="TC_BaseProjectileCustom" Abstract="True" ParentName="TC_BaseBullet">
+    <thingClass>TurretCollection.Projectile_Custom</thingClass>
   </ThingDef>
 
 </Defs>

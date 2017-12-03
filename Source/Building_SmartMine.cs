@@ -2,8 +2,7 @@
 using RimWorld;
 namespace TurretCollection
 {
-    public class Building_SmartMine : Building_TurretGun
-	{
+    public class Building_SmartMine : Building_Turret {
         private bool WarmingUp
         {
             get

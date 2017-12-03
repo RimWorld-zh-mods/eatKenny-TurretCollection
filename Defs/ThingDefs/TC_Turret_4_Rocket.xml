@@ -3,11 +3,10 @@
 
   <!-- ================ Rocket Launcher ================ -->
 
-  <ThingDef ParentName="TC_BuildingBase">
+  <ThingDef ParentName="TC_BaseTurretCustom">
     <defName>TC_Turret_Rocket</defName>
     <label>rocket launcher</label>
     <description>Rocket launcher fires 6 rockets at target area with each volley. Fires over wall, need to be manned.</description>
-    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_Heavy</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -62,12 +61,14 @@
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
+    <inspectorTabs>
+      <li ListIndex="0">ITab_Shells</li>
+    </inspectorTabs>
     <building>
       <turretGunDef>TC_Gun_Rocket</turretGunDef>
-      <turretShellDef>TC_Shell_Rocket</turretShellDef>
-      <turretBurstwarmupTime>6.0</turretBurstwarmupTime>
+      <turretBurstWarmupTime>6.0</turretBurstWarmupTime>
       <turretBurstCooldownTime>18.0</turretBurstCooldownTime>
-      <turretTopgraphicPath>TC/Building/TurretTop_Rocket</turretTopgraphicPath>
+      <turretTopGraphicPath>TC/Building/TurretTop_Rocket</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
@@ -77,7 +78,7 @@
     </researchPrerequisites>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseExtraDamageTrailBullet">
+  <ThingDef ParentName="TC_BaseProjectileCustom">
     <defName>TC_Bullet_Rocket</defName>
     <label>132mm rocket</label>
     <graphicData>
@@ -86,7 +87,7 @@
     </graphicData>
     <projectile>
       <damageDef>Bomb</damageDef>
-      <damageAmountBase>70</damageAmountBase>
+      <damageAmountBase>50</damageAmountBase>
       <explosionRadius>3.2</explosionRadius>
       <speed>60</speed>
       <flyOverhead>true</flyOverhead>
@@ -96,14 +97,14 @@
       <soundImpactAnticipate>TC_RL_PreImpact</soundImpactAnticipate>
     </projectile>
     <comps>
-			<li Class="TurretCollection.CompProperties_ExtraDamage">
-				<ExtraDamageAmount>80</ExtraDamageAmount>
-        <ExtraDamageDef>Bomb</ExtraDamageDef>
+			<li Class="TurretCollection.CompProperties_ProjectileExtraDamage">
+        <damageAmountBase>30</damageAmountBase>
+        <damageDef>Bomb</damageDef>
 			</li>
 		</comps>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseGun">
+  <ThingDef ParentName="TC_BaseWeapon">
     <defName>TC_Gun_Rocket</defName>
     <label>132mm rocket launcher</label>
     <description>132mm rocket launcher</description>
@@ -124,15 +125,16 @@
       <AccuracyLong>0.18</AccuracyLong>
       <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
     </statBases>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
-      <li>Artillery</li>
-      <li>Artillery_BaseDestroyer</li>
+      <li>Gun</li>
+      <li>TurretGun</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>TC_Bullet_Rocket</projectileDef>
+        <defaultProjectile>TC_Bullet_Rocket</defaultProjectile>
         <forcedMissRadius>7</forcedMissRadius>
         <warmupTime>1.5</warmupTime>
         <minRange>50</minRange>
@@ -146,7 +148,34 @@
         </targetParams>
       </li>
     </verbs>
+    <comps>
+      <li Class="CompProperties_ChangeableProjectile" />
+    </comps>
+    <building>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>TC_Shells_Rockets</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <categories>
+            <li>TC_Shells_Rockets</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
   </ThingDef>
+
+  <!-- ======== Shells ======== -->
+
+  <ThingCategoryDef>
+    <defName>TC_Shells_Rockets</defName>
+    <label>rockets</label>
+    <parent>TC_Shells</parent>
+  </ThingCategoryDef>
 
   <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Shell_Rocket</defName>
@@ -172,7 +201,7 @@
       <Steel>45</Steel>
     </costList>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>TC_Shells_Rockets</li>
     </thingCategories>
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
@@ -195,6 +224,7 @@
         </wickTicks>
       </li>
     </comps>
+    <projectileWhenLoaded>TC_Bullet_Rocket</projectileWhenLoaded>
   </ThingDef>
 
 </Defs>

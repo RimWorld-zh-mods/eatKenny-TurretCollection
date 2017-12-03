@@ -7,7 +7,7 @@
     <defName>TC_Turret_NavalGun28cm</defName>
     <label>28cm NavalGun Turret</label>
     <description>The ancient German 28cm naval gun was a 283 mm caliber gun designed in 1934 used on the Scharnhorst class battleships. It fires HE shells at long distance, deals devastating damage in large area. Fires over wall, need to be manned.</description>
-    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
+    <thingClass>TurretCollection.Building_TurretGunCustom</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_NavalGun28cm</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -62,12 +62,14 @@
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
+    <inspectorTabs>
+      <li ListIndex="0">ITab_Shells</li>
+    </inspectorTabs>
     <building>
       <turretGunDef>TC_Gun_NavalGun28cm</turretGunDef>
-      <turretShellDef>TC_Shell_NavalGun28cm</turretShellDef>
-      <turretBurstwarmupTime>4</turretBurstwarmupTime>
+      <turretBurstWarmupTime>4</turretBurstWarmupTime>
       <turretBurstCooldownTime>25</turretBurstCooldownTime>
-      <turretTopgraphicPath>TC/Building/TurretTop_NavalGun28cm</turretTopgraphicPath>
+      <turretTopGraphicPath>TC/Building/TurretTop_NavalGun28cm</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
@@ -77,7 +79,7 @@
     </researchPrerequisites>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseExtraDamageBullet">
+  <ThingDef ParentName="TC_BaseProjectileCustom">
     <defName>TC_Bullet_NavalGun28cm</defName>
     <label>28cm naval gun round</label>
     <graphicData>
@@ -95,14 +97,14 @@
       <soundImpactAnticipate>TC_RL_PreImpact</soundImpactAnticipate>
     </projectile>
     <comps>
-			<li Class="TurretCollection.CompProperties_ExtraDamage">
-				<ExtraDamageAmount>160</ExtraDamageAmount>
-        <ExtraDamageDef>Bomb</ExtraDamageDef>
+			<li Class="TurretCollection.CompProperties_ProjectileExtraDamage">
+        <damageAmountBase>160</damageAmountBase>
+        <damageDef>Bomb</damageDef>
 			</li>
 		</comps>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseGun">
+  <ThingDef ParentName="TC_BaseWeapon">
     <defName>TC_Gun_NavalGun28cm</defName>
     <label>28cm naval gun</label>
     <description>28cm naval gun</description>
@@ -122,15 +124,16 @@
       <AccuracyLong>0.02</AccuracyLong>
       <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
     </statBases>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
-      <li>Artillery</li>
-      <li>Artillery_BaseDestroyer</li>
+      <li>Gun</li>
+      <li>TurretGun</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>TC_Bullet_NavalGun28cm</projectileDef>
+        <defaultProjectile>TC_Bullet_NavalGun28cm</defaultProjectile>
         <burstShotCount>3</burstShotCount>
         <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
         <forcedMissRadius>11</forcedMissRadius>
@@ -144,7 +147,28 @@
         </targetParams>
       </li>
     </verbs>
+    <comps>
+      <li Class="CompProperties_ChangeableProjectile" />
+    </comps>
+    <building>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>TC_Shells_NavalGun28cms</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <categories>
+            <li>TC_Shells_NavalGun28cms</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
   </ThingDef>
+
+  <!-- ======== Crate ======== -->
 
   <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Crate_NavalGun28cm</defName>
@@ -173,10 +197,18 @@
     </tradeTags>
   </ThingDef>
 
+  <!-- ======== Shells ======== -->
+
+  <ThingCategoryDef>
+    <defName>TC_Shells_NavalGun28cms</defName>
+    <label>28cm naval gun shells</label>
+    <parent>TC_Shells</parent>
+  </ThingCategoryDef>
+
   <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Shell_NavalGun28cm</defName>
-    <label>28cm naval gun shell</label>
-    <description>big caliber naval gun shell.</description>
+    <label>28cm naval gun shells</label>
+    <description>Big caliber naval gun shells.</description>
     <graphicData>
       <texPath>TC/Item/Shell_NavalGun28cm</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -197,7 +229,7 @@
       <Steel>300</Steel>
     </costList>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>TC_Shells_NavalGun28cms</li>
     </thingCategories>
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
@@ -220,6 +252,7 @@
         </wickTicks>
       </li>
     </comps>
+    <projectileWhenLoaded>TC_Bullet_NavalGun28cm</projectileWhenLoaded>
   </ThingDef>
 
 </Defs>

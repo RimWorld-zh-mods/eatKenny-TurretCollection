@@ -7,7 +7,7 @@
     <defName>TC_Turret_SmartMine</defName>
     <label>smart mine</label>
     <description>A smart anti-personnel mine, launch itself to the enemy within a small radius and explode.</description>
-    <thingClass>TurretCollection.Building_SmartMine</thingClass>
+    <thingClass>TurretCollection.Building_TurretGunCustom</thingClass>
     <graphicData>
       <texPath>TC/Building/SmartMineBase</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -34,6 +34,7 @@
         <explosiveRadius>2.9</explosiveRadius>
         <explosiveDamageType>Bomb</explosiveDamageType>
       </li>
+      <li Class="TurretCollection.CompProperties_TurretDestroySelfAfterFire" />
     </comps>
     <castEdgeShadows>false</castEdgeShadows>
     <hasTooltip>true</hasTooltip>
@@ -47,7 +48,7 @@
       <turretGunDef>TC_Gun_SmartMine</turretGunDef>
       <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
       <turretBurstCooldownTime>1.0</turretBurstCooldownTime>
-      <turretTopgraphicPath>Inv</turretTopgraphicPath>
+      <turretTopGraphicPath>Inv</turretTopGraphicPath>
     </building>
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
@@ -99,14 +100,16 @@
       <AccuracyLong>1.00</AccuracyLong>
       <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
     </statBases>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
+      <li>Gun</li>
       <li>TurretGun</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_LaunchProjectile</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>TC_Bullet_SmartMine</projectileDef>
+        <defaultProjectile>TC_Bullet_SmartMine</defaultProjectile>
         <warmupTime>1.5</warmupTime>
         <range>5</range>
         <soundCast>InteractGrenade</soundCast>

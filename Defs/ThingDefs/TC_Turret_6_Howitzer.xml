@@ -7,7 +7,7 @@
     <defName>TC_Turret_Howitzer</defName>
     <label>howitzer turret</label>
     <description>A turret mounted with a 155mm howitzer. Fires over wall, need to be manned.</description>
-    <thingClass>TurretCollection.Building_TurretGunCustomTop</thingClass>
+    <thingClass>TurretCollection.Building_TurretGunCustom</thingClass>
     <graphicData>
       <texPath>TC/Building/Turret_Heavy</texPath>
       <graphicClass>Graphic_Single</graphicClass>
@@ -63,12 +63,14 @@
     <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
     <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
     <designationCategory>Security</designationCategory>
+    <inspectorTabs>
+      <li ListIndex="0">ITab_Shells</li>
+    </inspectorTabs>
     <building>
       <turretGunDef>TC_Gun_Howitzer</turretGunDef>
-      <turretShellDef>TC_Shell_Howitzer</turretShellDef>
-      <turretBurstwarmupTime>4.0</turretBurstwarmupTime>
+      <turretBurstWarmupTime>4.0</turretBurstWarmupTime>
       <turretBurstCooldownTime>14.0</turretBurstCooldownTime>
-      <turretTopgraphicPath>TC/Building/TurretTop_Howitzer</turretTopgraphicPath>
+      <turretTopGraphicPath>TC/Building/TurretTop_Howitzer</turretTopGraphicPath>
     </building>
     <placeWorkers>
       <li>PlaceWorker_NotUnderRoof</li>
@@ -78,7 +80,7 @@
     </researchPrerequisites>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseExtraDamageBullet">
+  <ThingDef ParentName="TC_BaseProjectileCustom">
     <defName>TC_Bullet_Howitzer</defName>
     <label>155mm HE round</label>
     <graphicData>
@@ -96,14 +98,14 @@
       <soundImpactAnticipate>TC_RL_PreImpact</soundImpactAnticipate>
     </projectile>
     <comps>
-			<li Class="TurretCollection.CompProperties_ExtraDamage">
-				<ExtraDamageAmount>100</ExtraDamageAmount>
-        <ExtraDamageDef>Bomb</ExtraDamageDef>
+			<li Class="TurretCollection.CompProperties_ProjectileExtraDamage">
+        <damageAmountBase>100</damageAmountBase>
+        <damageDef>Bomb</damageDef>
 			</li>
 		</comps>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseGun">
+  <ThingDef ParentName="TC_BaseWeapon">
     <defName>TC_Gun_Howitzer</defName>
     <label>155mm howitzer</label>
     <description>155mm howitzer</description>
@@ -123,15 +125,16 @@
       <AccuracyLong>0.2</AccuracyLong>
       <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
     </statBases>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
-      <li>Artillery</li>
-      <li>Artillery_BaseDestroyer</li>
+      <li>Gun</li>
+      <li>TurretGun</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>TC_Bullet_Howitzer</projectileDef>
+        <defaultProjectile>TC_Bullet_Howitzer</defaultProjectile>
         <forcedMissRadius>5</forcedMissRadius>
         <warmupTime>1.5</warmupTime>
         <minRange>38</minRange>
@@ -143,7 +146,28 @@
         </targetParams>
       </li>
     </verbs>
+    <comps>
+      <li Class="CompProperties_ChangeableProjectile" />
+    </comps>
+    <building>
+      <fixedStorageSettings>
+        <filter>
+          <categories>
+            <li>TC_Shells_Howitzers</li>
+          </categories>
+        </filter>
+      </fixedStorageSettings>
+      <defaultStorageSettings>
+        <filter>
+          <categories>
+            <li>TC_Shells_Howitzers</li>
+          </categories>
+        </filter>
+      </defaultStorageSettings>
+    </building>
   </ThingDef>
+
+  <!-- ======== Crate ======== -->
 
   <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Crate_Howitzer</defName>
@@ -172,6 +196,14 @@
     </tradeTags>
   </ThingDef>
 
+  <!-- ======== Shells ======== -->
+
+  <ThingCategoryDef>
+    <defName>TC_Shells_Howitzers</defName>
+    <label>155mm howitzer shells</label>
+    <parent>TC_Shells</parent>
+  </ThingCategoryDef>
+
   <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Shell_Howitzer</defName>
     <label>155mm howitzer shell</label>
@@ -196,7 +228,7 @@
       <Steel>80</Steel>
     </costList>
     <thingCategories>
-      <li>Manufactured</li>
+      <li>TC_Shells_Howitzers</li>
     </thingCategories>
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
@@ -219,6 +251,7 @@
         </wickTicks>
       </li>
     </comps>
+    <projectileWhenLoaded>TC_Bullet_Howitzer</projectileWhenLoaded>
   </ThingDef>
 
 </Defs>

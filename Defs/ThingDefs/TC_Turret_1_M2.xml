@@ -57,7 +57,7 @@
       <turretGunDef>TC_Gun_M2Browning</turretGunDef>
       <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
       <turretBurstCooldownTime>2.5</turretBurstCooldownTime>
-      <turretTopgraphicPath>TC/Building/TurretTop_M2</turretTopgraphicPath>
+      <turretTopGraphicPath>TC/Building/TurretTop_M2</turretTopGraphicPath>
     </building>
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
@@ -85,7 +85,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseGun">
+  <ThingDef ParentName="TC_BaseWeapon">
     <defName>TC_Gun_M2Browning</defName>
     <label>M2 Browning Machine Gun</label>
     <description>M2 Browning Machine Gun</description>
@@ -105,14 +105,16 @@
       <AccuracyLong>0.33</AccuracyLong>
       <RangedWeapon_Cooldown>1.0</RangedWeapon_Cooldown>
     </statBases>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
+      <li>Gun</li>
       <li>TurretGun</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>TC_Bullet_M2Browning</projectileDef>
+        <defaultProjectile>TC_Bullet_M2Browning</defaultProjectile>
         <warmupTime>1.5</warmupTime>
         <range>40</range>
         <ticksBetweenBurstShots>9</ticksBetweenBurstShots>

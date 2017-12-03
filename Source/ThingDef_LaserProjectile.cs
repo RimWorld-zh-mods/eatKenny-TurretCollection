@@ -11,28 +11,28 @@ using Verse.Sound;   // Needed when you do something with the Sound
 
 namespace TurretCollection
 {
-    /// <summary>
-    /// Laser projectile ThingDef custom variables class.
-    /// </summary>
-    /// <author>Rikiki</author>
-    /// <permission>Use this code as you want, just remember to add a link to the corresponding Ludeon forum mod release thread.
-    /// Remember learning is always better than just copy/paste...</permission>
-    public class ThingDef_LaserProjectile : ThingDef
-    {
-        // Draw.
-        public float preFiringInitialIntensity = 0f;
-        public float preFiringFinalIntensity = 0f;
-        public float postFiringInitialIntensity = 0f;
-        public float postFiringFinalIntensity = 0f;
-        public string warmupGraphicPathSingle = null;
+  /// <summary>
+  /// Laser projectile ThingDef custom variables class.
+  /// </summary>
+  /// <author>Rikiki</author>
+  /// <permission>Use this code as you want, just remember to add a link to the corresponding Ludeon forum mod release thread.
+  /// Remember learning is always better than just copy/paste...</permission>
+  public class ThingDef_LaserProjectile : ThingDef
+  {
+    // Draw.
+    public float preFiringInitialIntensity = 0f;
+    public float preFiringFinalIntensity = 0f;
+    public float postFiringInitialIntensity = 0f;
+    public float postFiringFinalIntensity = 0f;
+    public string warmupGraphicPathSingle = null;
 
-        // Sound.
-        public string warmupSound;
+    // Sound.
+    public string warmupSound;
 
-        // Miscellaneous.
-        public bool isWarmupProjectile = false;
-        public string warmupProjectileDefName = null;
-        public int preFiringDuration;
-        public int postFiringDuration;
-    }
+    // Miscellaneous.
+    public bool isWarmupProjectile = false;
+    public string warmupdefaultProjectileName = null;
+    public int preFiringDuration;
+    public int postFiringDuration;
+  }
 }

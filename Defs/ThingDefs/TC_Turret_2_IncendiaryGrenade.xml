@@ -54,10 +54,9 @@
     <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
     <building>
       <turretGunDef>TC_Gun_IncendiaryGrenade</turretGunDef>
-      <turretShellDef>TC_Shell_IncendiaryGrenade</turretShellDef>
-      <turretBurstwarmupTime>0.5</turretBurstwarmupTime>
+      <turretBurstWarmupTime>0.5</turretBurstWarmupTime>
       <turretBurstCooldownTime>15.0</turretBurstCooldownTime>
-      <turretTopgraphicPath>TC/Building/TurretTop_GrenadeLauncher</turretTopgraphicPath>
+      <turretTopGraphicPath>TC/Building/TurretTop_GrenadeLauncher</turretTopGraphicPath>
     </building>
     <recipeMaker>
       <workSpeedStat>SmithingSpeed</workSpeedStat>
@@ -83,7 +82,6 @@
       <damageAmountBase>10</damageAmountBase>
       <explosionRadius>2.4</explosionRadius>
       <preExplosionSpawnThingDef>FilthFuel</preExplosionSpawnThingDef>
-      <explosionSpawnChance>0.35</explosionSpawnChance>
       <speed>60</speed>
       <flyOverhead>true</flyOverhead>
       <soundExplode>MortarIncendiary_Explode</soundExplode>
@@ -93,7 +91,7 @@
     </projectile>
   </ThingDef>
 
-  <ThingDef ParentName="TC_BaseGun">
+  <ThingDef ParentName="TC_BaseWeapon">
     <defName>TC_Gun_IncendiaryGrenade</defName>
     <label>incendiary grenade launcher</label>
     <description>incendiary grenade launcher</description>
@@ -113,15 +111,16 @@
       <AccuracyLong>0.02</AccuracyLong>
       <RangedWeapon_Cooldown>1.00</RangedWeapon_Cooldown>
     </statBases>
+    <techLevel>Industrial</techLevel>
     <weaponTags>
-      <li>Artillery</li>
-      <li>Artillery_BaseDestroyer</li>
+      <li>Gun</li>
+      <li>TurretGun</li>
     </weaponTags>
     <verbs>
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <projectileDef>TC_Bullet_IncendiaryGrenade</projectileDef>
+        <defaultProjectile>TC_Bullet_IncendiaryGrenade</defaultProjectile>
         <forcedMissRadius>7</forcedMissRadius>
         <warmupTime>1.5</warmupTime>
         <minRange>15</minRange>
@@ -137,7 +136,15 @@
     </verbs>
   </ThingDef>
 
-  <ThingDef ParentName="TC_ResourceBase">
+  <!-- Shells -->
+
+  <!-- <ThingCategoryDef>
+    <defName>TC_Shells_Grenades</defName>
+    <label>grenades</label>
+    <parent>TC_Shells</parent>
+  </ThingCategoryDef> -->
+
+  <!-- <ThingDef ParentName="TC_ResourceBase">
     <defName>TC_Shell_IncendiaryGrenade</defName>
     <label>incendiary grenades</label>
     <description>4 incendiary grenades fired from incendiary grenade launcher.</description>
@@ -184,6 +191,6 @@
         </wickTicks>
       </li>
     </comps>
-  </ThingDef>
-
+  </ThingDef> -->
+  
 </Defs>
