@@ -144,6 +144,7 @@
         <targetParams>
           <canTargetLocations>true</canTargetLocations>
         </targetParams>
+        <requireLineOfSight>false</requireLineOfSight>
       </li>
     </verbs>
     <comps>
