@@ -134,7 +134,6 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>TC_Bullet_Rocket</defaultProjectile>
         <forcedMissRadius>7</forcedMissRadius>
         <warmupTime>1.5</warmupTime>
         <minRange>50</minRange>
@@ -184,12 +183,12 @@
     <description>A set of 6 Rocktes fired from rocket launcher.</description>
     <graphicData>
       <texPath>TC/Item/Shell_Rocket</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Standard_Drop</soundDrop>
     <tickerType>Normal</tickerType>
-    <stackLimit>5</stackLimit>
+    <stackLimit>30</stackLimit>
     <statBases>
       <MaxHitPoints>70</MaxHitPoints>
       <MarketValue>100</MarketValue>
@@ -199,7 +198,8 @@
       <DeteriorationRate>1</DeteriorationRate>
     </statBases>
     <costList>
-      <Steel>45</Steel>
+      <Steel>20</Steel>
+      <Chemfuel>10</Chemfuel>
     </costList>
     <thingCategories>
       <li>TC_Shells_Rockets</li>

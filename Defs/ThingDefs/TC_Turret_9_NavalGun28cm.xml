@@ -133,7 +133,6 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>TC_Bullet_NavalGun28cm</defaultProjectile>
         <burstShotCount>3</burstShotCount>
         <ticksBetweenBurstShots>1</ticksBetweenBurstShots>
         <forcedMissRadius>11</forcedMissRadius>
@@ -212,12 +211,12 @@
     <description>Big caliber naval gun shells.</description>
     <graphicData>
       <texPath>TC/Item/Shell_NavalGun28cm</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Standard_Drop</soundDrop>
     <tickerType>Normal</tickerType>
-    <stackLimit>2</stackLimit>
+    <stackLimit>6</stackLimit>
     <statBases>
       <MaxHitPoints>70</MaxHitPoints>
       <MarketValue>600</MarketValue>
@@ -227,7 +226,8 @@
       <DeteriorationRate>1</DeteriorationRate>
     </statBases>
     <costList>
-      <Steel>300</Steel>
+      <Steel>100</Steel>
+      <Chemfuel>80</Chemfuel>
     </costList>
     <thingCategories>
       <li>TC_Shells_NavalGun28cms</li>

@@ -133,7 +133,6 @@
       <li>
         <verbClass>Verb_Shoot</verbClass>
         <hasStandardCommand>true</hasStandardCommand>
-        <defaultProjectile>TC_Bullet_Cannon</defaultProjectile>
         <warmupTime>1.5</warmupTime>
         <minRange>12</minRange>
         <range>100</range>
@@ -208,7 +207,7 @@
     <description>An explosive shell to be fired from 120mm tank gun. Explodes when damaged.</description>
     <graphicData>
       <texPath>TC/Item/Shell_Cannon</texPath>
-      <graphicClass>Graphic_Single</graphicClass>
+      <graphicClass>Graphic_StackCount</graphicClass>
     </graphicData>
     <soundInteract>Metal_Drop</soundInteract>
     <soundDrop>Standard_Drop</soundDrop>
@@ -223,7 +222,8 @@
       <DeteriorationRate>1</DeteriorationRate>
     </statBases>
     <costList>
-      <Steel>38</Steel>
+      <Steel>40</Steel>
+      <Chemfuel>20</Chemfuel>
     </costList>
     <thingCategories>
       <li>TC_Shells_Cannons</li>
